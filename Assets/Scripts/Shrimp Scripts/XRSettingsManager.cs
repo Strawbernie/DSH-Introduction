@@ -11,6 +11,7 @@ public class XRSettingsManager : MonoBehaviour
 
     private bool _continuousTurnActive = false;
     private bool _vignetteActive = false;
+    private bool _teleportActive = false;
     private void Awake()
     {
         if(Instance == null)
@@ -44,6 +45,11 @@ public class XRSettingsManager : MonoBehaviour
         _vignetteActive = vignetteValue;
         XRSettingsChange?.Invoke();
     }
+    public void setTeleport(bool teleportValue)
+    {
+        _teleportActive = teleportValue;
+        XRSettingsChange?.Invoke();
+    }
     public bool isContinuousTurnActive()
     {
         return _continuousTurnActive;
@@ -51,5 +57,9 @@ public class XRSettingsManager : MonoBehaviour
     public bool isVignetteActive()
     {
         return _vignetteActive;
+    }
+    public bool isTeleportActive()
+    {
+        return _teleportActive;
     }
 }

@@ -8,10 +8,12 @@ using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 public class XRSettingsListener : MonoBehaviour
 {
     public TunnelingVignetteController tunnelingVignetteController;
+    public TeleportationProvider teleportationProvider;
     public ActionBasedControllerManager controllerManager;
     private void Awake()
     {
         XRSettingsManager.XRSettingsChange += UpdateXRSettings;
+        teleportationProvider = FindObjectOfType<TeleportationProvider>();
     }
     private void Start()
     {
@@ -27,6 +29,7 @@ public class XRSettingsListener : MonoBehaviour
         if(XRSettingsManager.Instance != null)
         {
             tunnelingVignetteController.gameObject.SetActive(XRSettingsManager.Instance.isVignetteActive());
+            teleportationProvider.gameObject.SetActive(XRSettingsManager.Instance.isTeleportActive());
             controllerManager.smoothTurnEnabled = XRSettingsManager.Instance.isContinuousTurnActive();
         }
         else

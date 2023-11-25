@@ -12,6 +12,7 @@ public class OptionsMenu : MonoBehaviour
     public Slider sfxSlider;
     public TMP_Dropdown turnDropdown;
     public Toggle vignetteToggle;
+    public Toggle teleportationToggle;
 
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class OptionsMenu : MonoBehaviour
 
         turnDropdown.onValueChanged.AddListener(TurnChange);
         vignetteToggle.onValueChanged.AddListener(VignetteChange);
+        teleportationToggle.onValueChanged.AddListener(teleportChange);
     }
 
     private void OnDestroy()
@@ -50,5 +52,9 @@ public class OptionsMenu : MonoBehaviour
     private void VignetteChange(bool vignetteValue)
     {
         XRSettingsManager.Instance.setVignette(vignetteValue);
+    }
+    private void teleportChange(bool teleportValue)
+    {
+        XRSettingsManager.Instance.setTeleport(teleportValue);
     }
 }
