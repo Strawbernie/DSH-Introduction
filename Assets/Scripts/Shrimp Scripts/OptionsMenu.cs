@@ -13,6 +13,12 @@ public class OptionsMenu : MonoBehaviour
     public TMP_Dropdown turnDropdown;
     public Toggle vignetteToggle;
     public Toggle teleportationToggle;
+    public GameObject Picked;
+    public GameObject Confirm;
+    public GameObject Experience;
+    public GameObject Movement;
+    public GameObject Sickness;
+    public GameObject Often;
 
     private void Awake()
     {
@@ -56,5 +62,72 @@ public class OptionsMenu : MonoBehaviour
     private void teleportChange(bool teleportValue)
     {
         XRSettingsManager.Instance.setTeleport(teleportValue);
+    }
+    public void ExperienceYes()
+    {
+        Movement.SetActive(true);
+        Experience.SetActive(false);
+    }
+    public void ExperienceNo()
+    {
+        Sickness.SetActive(true);
+        Experience.SetActive(false);
+        teleportationToggle.isOn = true;
+    }
+    public void MovementYes()
+    {
+        Sickness.SetActive(true);
+        Movement.SetActive(false);
+        teleportationToggle.isOn = false;
+    }
+    public void MovementReturn()
+    {
+        Movement.SetActive(false);
+        Experience.SetActive(true);
+    }
+    public void MovementNo()
+    {
+        Sickness.SetActive(true);
+        Movement.SetActive(false);
+        teleportationToggle.isOn = true;
+    }
+    public void SicknessYes()
+    {
+        Often.SetActive(true);
+        Sickness.SetActive(false);
+        turnDropdown.value = 0;
+        //SnapTurn
+    }
+    public void SicknessReturn()
+    {
+        Sickness.SetActive(false);
+        Movement.SetActive(true);
+    }
+    public void SicknessNo()
+    {
+        Picked.SetActive(true);
+        Confirm.SetActive(true);
+        Sickness.SetActive(false);
+        turnDropdown.value = 1;
+        //Continuous Turn
+    }
+    public void OftenYes()
+    {
+        Picked.SetActive(true);
+        Confirm.SetActive(true);
+        Often.SetActive(false);
+        vignetteToggle.isOn = true;
+    }
+    public void OftenReturn()
+    {
+        Often.SetActive(false);
+        Sickness.SetActive(true);
+    }
+    public void OftenNo()
+    {
+        Picked.SetActive(true);
+        Confirm.SetActive(true);
+        Often.SetActive(false);
+        vignetteToggle.isOn = false;
     }
 }
