@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class OptionsMenu : MonoBehaviour
 {
+    private XRSettingsManager settingsManager;
     public Slider masterSlider;
     public Slider musicSlider;
     public Slider sfxSlider;
@@ -22,6 +23,7 @@ public class OptionsMenu : MonoBehaviour
 
     private void Awake()
     {
+        settingsManager = FindObjectOfType<XRSettingsManager>();
         masterSlider.onValueChanged.AddListener(MasterVolumeChange);
         musicSlider.onValueChanged.AddListener(MusicVolumeChange);
         sfxSlider.onValueChanged.AddListener(SFXVolumeChange);
@@ -29,6 +31,7 @@ public class OptionsMenu : MonoBehaviour
         turnDropdown.onValueChanged.AddListener(TurnChange);
         vignetteToggle.onValueChanged.AddListener(VignetteChange);
         teleportationToggle.onValueChanged.AddListener(teleportChange);
+        CheckSettings();
     }
 
     private void OnDestroy()
@@ -129,5 +132,32 @@ public class OptionsMenu : MonoBehaviour
         Confirm.SetActive(true);
         Often.SetActive(false);
         vignetteToggle.isOn = false;
+    }
+    public void CheckSettings()
+    {
+        if (settingsManager._continuousTurnActive)
+        {
+            turnDropdown.value = 1;
+        }
+        else
+        {
+            turnDropdown.value = 0;
+        }
+        if (settingsManager._vignetteActive)
+        {
+            vignetteToggle.isOn = true;
+        }
+        else
+        {
+            vignetteToggle.isOn = false;
+        }
+        if (settingsManager._teleportActive)
+        {
+            teleportationToggle.isOn = true;
+        }
+        else
+        {
+            teleportationToggle.isOn = false;
+        }
     }
 }

@@ -9,9 +9,9 @@ public class XRSettingsManager : MonoBehaviour
     public static event Action XRSettingsChange;
     public static XRSettingsManager Instance;
 
-    private bool _continuousTurnActive = false;
-    private bool _vignetteActive = false;
-    private bool _teleportActive = false;
+    public bool _continuousTurnActive = false;
+    public bool _vignetteActive = false;
+    public bool _teleportActive = false;
     private void Awake()
     {
         if(Instance == null)
