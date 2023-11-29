@@ -25,8 +25,6 @@ public class XRSettingsManager : MonoBehaviour
         }
     }
 
-
-    //Yeah... I hate this too
     public void setContinuousTurn(int dropdownSetting)
     {
         if(dropdownSetting == 0)

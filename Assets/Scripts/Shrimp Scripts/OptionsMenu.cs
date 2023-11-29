@@ -14,6 +14,7 @@ public class OptionsMenu : MonoBehaviour
     public TMP_Dropdown turnDropdown;
     public Toggle vignetteToggle;
     public Toggle teleportationToggle;
+    //UI for Quiz
     public GameObject Picked;
     public GameObject Confirm;
     public GameObject Experience;
