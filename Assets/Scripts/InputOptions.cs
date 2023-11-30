@@ -22,15 +22,22 @@ public class InputOptions : MonoBehaviour
     {
         if (inputData._leftController.TryGetFeatureValue(CommonUsages.menuButton, out bool LeftButton))
         {
-            
-            if (!isActive && LeftButton && !pressedButton)
+            //Makes the menu visible if it was not
+            if (!isActive && !pressedButton && LeftButton)
             {
                 isActive = true;
                 Menu.SetActive(true);
                 pressedButton = true;
             }
+            //Makes the menu invisible if it was not
+            else if (isActive && !pressedButton && LeftButton)
+            {
+                isActive = false;
+                Menu.SetActive(false);
+                pressedButton = true;
+            }
         }
-        else
+        if (!LeftButton)
         {
             pressedButton = false;
         }

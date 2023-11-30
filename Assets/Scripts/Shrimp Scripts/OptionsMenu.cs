@@ -99,8 +99,8 @@ public class OptionsMenu : MonoBehaviour
     {
         Often.SetActive(true);
         Sickness.SetActive(false);
+        //Snap Turn
         turnDropdown.value = 0;
-        //SnapTurn
     }
     public void SicknessReturn()
     {
@@ -112,8 +112,8 @@ public class OptionsMenu : MonoBehaviour
         Picked.SetActive(true);
         Confirm.SetActive(true);
         Sickness.SetActive(false);
-        turnDropdown.value = 1;
         //Continuous Turn
+        turnDropdown.value = 1;
     }
     public void OftenYes()
     {
