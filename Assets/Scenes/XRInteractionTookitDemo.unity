@@ -1402,6 +1402,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 564796391}
   m_CullTransparentMesh: 1
+--- !u!114 &578589281 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6908108147740257555, guid: 17afe1f707f0b7742af2db473a10b609, type: 3}
+  m_PrefabInstance: {fileID: 1807527279}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6803edce0201f574f923fd9d10e5b30a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &650025388
 GameObject:
   m_ObjectHideFlags: 0
@@ -9588,6 +9599,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9093883769270499300, guid: 17afe1f707f0b7742af2db473a10b609, type: 3}
+      propertyPath: interactor
+      value: 
+      objectReference: {fileID: 578589281}
     - target: {fileID: 9093883769270499300, guid: 17afe1f707f0b7742af2db473a10b609, type: 3}
       propertyPath: teleportationProvider
       value: 

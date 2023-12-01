@@ -79,6 +79,8 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         [SerializeField]
         [Tooltip("If true, continuous turn will be enabled. If false, snap turn will be enabled. Note: If smooth motion is enabled and enable strafe is enabled on the continuous move provider, turn will be overriden in favor of strafe.")]
         bool m_SmoothTurnEnabled;
+        [SerializeField]
+        public bool TeleportEnabled;
 
         [Space]
         [Header("UI Settings")]
@@ -224,7 +226,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         {
             m_PostponedDeactivateTeleport = false;
 
-            if (m_TeleportInteractor != null)
+            if (m_TeleportInteractor != null && TeleportEnabled)
                 m_TeleportInteractor.gameObject.SetActive(true);
 
             if (m_RayInteractor != null)
