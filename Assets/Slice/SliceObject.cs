@@ -13,10 +13,6 @@ public class SliceObject : MonoBehaviour
     public LayerMask sliceableLayer;
     public Material CrossMaterial;
     public float cutforce = 2000f;
-    void Start()
-    {
-        
-    }
 
     void FixedUpdate()
     {
