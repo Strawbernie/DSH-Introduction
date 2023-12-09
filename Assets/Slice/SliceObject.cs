@@ -49,5 +49,11 @@ public class SliceObject : MonoBehaviour
         slicedObject.layer = LayerSliceable;
         collider.convex = true;
         rb.AddExplosionForce(cutforce, slicedObject.transform.position, 1);
+        StartCoroutine(DestroyCooldown(slicedObject));
+    }
+    IEnumerator DestroyCooldown(GameObject slicedObject)
+    {
+        yield return new WaitForSeconds(2);
+        Destroy(slicedObject);
     }
 }
