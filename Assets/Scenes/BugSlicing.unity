@@ -2154,6 +2154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SliceableCubePrefab: {fileID: 1296079494106565952, guid: 87c37935d0487834980edfd0b76a95e4, type: 3}
+  UpDownPrefab: {fileID: 3966242350577458170, guid: 4fb53089d1fbeae418b43c36af9de600, type: 3}
+  HealPrefab: {fileID: 8089346576356574768, guid: 1f85450b8998f184991c56eaa59e8492, type: 3}
   HP: 10
   text: {fileID: 0}
 --- !u!1 &1383650881

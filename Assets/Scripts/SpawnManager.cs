@@ -6,6 +6,8 @@ using TMPro;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject SliceableCubePrefab;
+    public GameObject UpDownPrefab;
+    public GameObject HealPrefab;
     SpawnManager spawnManager;
     float LeftTimer;
     float RightTimer;
@@ -28,7 +30,19 @@ public class SpawnManager : MonoBehaviour
     {
         float yPos = (Random.Range(.75f, 1.5f));
         float zPos = (Random.Range(-2f, -2.9f));
-        Instantiate(SliceableCubePrefab, new Vector3(3, yPos, zPos), Quaternion.identity);
+        float prefabID = (Random.Range(1, 9));
+        if (prefabID < 6)
+        {
+            Instantiate(SliceableCubePrefab, new Vector3(3, yPos, zPos), Quaternion.identity);
+        }
+        else if (prefabID < 8)
+        {
+            Instantiate(UpDownPrefab, new Vector3(3, yPos, zPos), Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(HealPrefab, new Vector3(3, yPos, zPos), Quaternion.identity);
+        }
         LeftTimer = (Random.Range(.7f, 1.8f));
         yield return new WaitForSeconds(LeftTimer);
         yield return StartCoroutine(SpawnLeft());
@@ -37,7 +51,19 @@ public class SpawnManager : MonoBehaviour
     {
         float yPos = (Random.Range(.75f, 1.5f));
         float zPos = (Random.Range(-3.1f, -4f));
-        Instantiate(SliceableCubePrefab, new Vector3(3, yPos, zPos), Quaternion.identity);
+        float prefabID = (Random.Range(1, 9));
+        if (prefabID < 6)
+        {
+            Instantiate(SliceableCubePrefab, new Vector3(3, yPos, zPos), Quaternion.identity);
+        }
+        else if (prefabID < 8)
+        {
+            Instantiate(UpDownPrefab, new Vector3(3, yPos, zPos), Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(HealPrefab, new Vector3(3, yPos, zPos), Quaternion.identity);
+        }
         RightTimer = (Random.Range(.7f, 1.8f));
         yield return new WaitForSeconds(RightTimer);
         yield return StartCoroutine(SpawnRight());
