@@ -5,25 +5,29 @@ using TMPro;
 
 public class SliceCubeHeal : MonoBehaviour
 {
+    public GameObject target;
     public float moveSpeed;
     SpawnManager spawnManager;
     public TMP_Text text;
 
     private void Start()
     {
+        target = GameObject.FindWithTag("Server");
         spawnManager = FindObjectOfType<SpawnManager>();
         text = FindObjectOfType<TMP_Text>();
     }
     void Update()
     {
-        float moveAmount = moveSpeed* Time.deltaTime;
-        Vector3 currentX= transform.position;
-        currentX.x -= moveAmount;
-        gameObject.transform.localPosition = currentX;
+        if (target != null)
+        {
+            Vector3 direction = (target.transform.position - transform.position).normalized;
+            transform.position += direction * moveSpeed * Time.deltaTime;
+            gameObject.transform.LookAt(target.transform.position);
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("DamageZone"))
+        if (other.gameObject.CompareTag("Server"))
         {
             spawnManager.HP++;
             text.text = ("HP:" + spawnManager.HP);

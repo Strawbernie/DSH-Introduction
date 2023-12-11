@@ -29,7 +29,10 @@ public class XRSettingsListener : MonoBehaviour
         if(XRSettingsManager.Instance != null)
         {
             tunnelingVignetteController.gameObject.SetActive(XRSettingsManager.Instance.isVignetteActive());
-            teleportationProvider.gameObject.SetActive(XRSettingsManager.Instance.isTeleportActive());
+            if(teleportationProvider != null)
+            {
+                teleportationProvider.gameObject.SetActive(XRSettingsManager.Instance.isTeleportActive());
+            }
             controllerManager.smoothTurnEnabled = XRSettingsManager.Instance.isContinuousTurnActive();
             controllerManager.TeleportEnabled = XRSettingsManager.Instance.isTeleportActive();
         }

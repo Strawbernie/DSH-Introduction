@@ -5,6 +5,7 @@ using TMPro;
 
 public class SliceCubeUpDown : MonoBehaviour
 {
+    public GameObject target;
     public float moveSpeed;
     SpawnManager spawnManager;
     public TMP_Text text;
@@ -12,14 +13,20 @@ public class SliceCubeUpDown : MonoBehaviour
 
     private void Start()
     {
+        target = GameObject.FindWithTag("Server");
         spawnManager = FindObjectOfType<SpawnManager>();
         text = FindObjectOfType<TMP_Text>();
     }
     void Update()
     {
+        if (target != null)
+        {
+            Vector3 direction = (target.transform.position - transform.position).normalized;
+            transform.position += direction * moveSpeed * Time.deltaTime;
+            gameObject.transform.LookAt(target.transform.position);
+        }
         float moveAmount = moveSpeed* Time.deltaTime;
         Vector3 currentX= transform.position;
-        currentX.x -= moveAmount;
         if (!goingup)
         {
             currentX.y -= moveAmount;

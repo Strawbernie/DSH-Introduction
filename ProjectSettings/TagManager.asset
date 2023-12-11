@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - DamageZone
+  - Server
   layers:
   - Default
   - TransparentFX

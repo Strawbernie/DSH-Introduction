@@ -23,13 +23,12 @@ public class SpawnManager : MonoBehaviour
     IEnumerator StartDelay()
     {
         yield return new WaitForSeconds(5);
-        StartCoroutine(SpawnLeft());
-        yield return StartCoroutine(SpawnRight());
+        yield return StartCoroutine(SpawnLeft());
     }
     IEnumerator SpawnLeft()
     {
         float yPos = (Random.Range(.75f, 1.5f));
-        float zPos = (Random.Range(-2f, -2.9f));
+        float zPos = (Random.Range(5f, -9f));
         float prefabID = (Random.Range(1, 9));
         if (prefabID < 6)
         {
@@ -43,29 +42,8 @@ public class SpawnManager : MonoBehaviour
         {
             Instantiate(HealPrefab, new Vector3(3, yPos, zPos), Quaternion.identity);
         }
-        LeftTimer = (Random.Range(.7f, 1.8f));
+        LeftTimer = (Random.Range(.35f, .9f));
         yield return new WaitForSeconds(LeftTimer);
         yield return StartCoroutine(SpawnLeft());
-    }
-    IEnumerator SpawnRight()
-    {
-        float yPos = (Random.Range(.75f, 1.5f));
-        float zPos = (Random.Range(-3.1f, -4f));
-        float prefabID = (Random.Range(1, 9));
-        if (prefabID < 6)
-        {
-            Instantiate(SliceableCubePrefab, new Vector3(3, yPos, zPos), Quaternion.identity);
-        }
-        else if (prefabID < 8)
-        {
-            Instantiate(UpDownPrefab, new Vector3(3, yPos, zPos), Quaternion.identity);
-        }
-        else
-        {
-            Instantiate(HealPrefab, new Vector3(3, yPos, zPos), Quaternion.identity);
-        }
-        RightTimer = (Random.Range(.7f, 1.8f));
-        yield return new WaitForSeconds(RightTimer);
-        yield return StartCoroutine(SpawnRight());
     }
 }
