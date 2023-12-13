@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class SpawnManager : MonoBehaviour
     IEnumerator SpawnLeft()
     {
         float yPos = (Random.Range(.75f, 1.5f));
-        float zPos = (Random.Range(5f, -9f));
+        float zPos = (Random.Range(3.5f, -7.5f));
         float prefabID = (Random.Range(1, 9));
         if (prefabID < 6)
         {
@@ -42,8 +43,15 @@ public class SpawnManager : MonoBehaviour
         {
             Instantiate(HealPrefab, new Vector3(3, yPos, zPos), Quaternion.identity);
         }
-        LeftTimer = (Random.Range(.35f, .9f));
+        LeftTimer = (Random.Range(.45f, .9f));
         yield return new WaitForSeconds(LeftTimer);
         yield return StartCoroutine(SpawnLeft());
+    }
+   public void CheckHP()
+    {
+        if (HP < 0)
+        {
+            SceneManager.LoadScene("Titlescreen");
+        }
     }
 }

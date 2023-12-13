@@ -51,6 +51,7 @@ public class SliceCubeUpDown : MonoBehaviour
         {
             spawnManager.HP--;
             text.text = ("HP:" + spawnManager.HP);
+            spawnManager.CheckHP();
             Destroy(gameObject);
         }
     }
