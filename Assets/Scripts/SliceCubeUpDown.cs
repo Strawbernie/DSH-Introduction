@@ -7,6 +7,7 @@ public class SliceCubeUpDown : MonoBehaviour
 {
     public GameObject target;
     public float moveSpeed;
+    public float verticalSpeed;
     SpawnManager spawnManager;
     public TMP_Text text;
     bool goingup = false;
@@ -26,14 +27,15 @@ public class SliceCubeUpDown : MonoBehaviour
             gameObject.transform.LookAt(target.transform.position);
         }
         float moveAmount = moveSpeed* Time.deltaTime;
+        float verticalAmount = verticalSpeed * Time.deltaTime;
         Vector3 currentX= transform.position;
         if (!goingup)
         {
-            currentX.y -= moveAmount;
+            currentX.y -= verticalAmount;
         }
         else
         {
-            currentX.y += moveAmount;
+            currentX.y += verticalAmount;
         }
         if (currentX.y < 1)
         {
