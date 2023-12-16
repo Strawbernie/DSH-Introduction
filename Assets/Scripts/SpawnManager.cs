@@ -33,11 +33,11 @@ public class SpawnManager : MonoBehaviour
         float prefabID = (Random.Range(1, 9));
         if (prefabID < 6)
         {
-            Instantiate(SliceableCubePrefab, new Vector3(4, yPos, zPos), Quaternion.identity);
+            Instantiate(SliceableCubePrefab, new Vector3(4, yPos, zPos), Quaternion.Euler(-90f, -90f, 0f));
         }
         else if (prefabID < 8)
         {
-            Instantiate(UpDownPrefab, new Vector3(4, yPos, zPos), Quaternion.identity);
+            Instantiate(UpDownPrefab, new Vector3(4, yPos, zPos), Quaternion.Euler(-90f, -90f, 0f));
         }
         else
         {
