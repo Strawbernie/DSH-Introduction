@@ -30,6 +30,8 @@ public class SliceCubeMovement : MonoBehaviour
         if (other.gameObject.CompareTag("DamageZone"))
         {
             spawnManager.HP--;
+            ScoreManager.Missed++;
+            Debug.Log("missed:"+ScoreManager.Missed);
             text.text = ("HP:" + spawnManager.HP);
             spawnManager.CheckHP();
             Destroy(gameObject);

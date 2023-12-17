@@ -41,7 +41,7 @@ public class SliceCubeUpDown : MonoBehaviour
         {
             goingup= true;
         }
-        else if (currentX.y>2)
+        else if (currentX.y>1.75f)
         {
             goingup= false;
         }
@@ -52,6 +52,8 @@ public class SliceCubeUpDown : MonoBehaviour
         if (other.gameObject.CompareTag("DamageZone"))
         {
             spawnManager.HP--;
+            ScoreManager.Missed++;
+            Debug.Log("missed:" + ScoreManager.Missed);
             text.text = ("HP:" + spawnManager.HP);
             spawnManager.CheckHP();
             Destroy(gameObject);

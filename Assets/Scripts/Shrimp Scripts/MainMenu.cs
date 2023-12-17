@@ -12,14 +12,28 @@ public class MainMenu : MonoBehaviour
     public GameObject mainMenu;
     private void Awake()
     {
-        startButton.onClick.AddListener(StartGame);
-        sliceButton.onClick.AddListener(SliceGame);
+        if (startButton != null)
+        {
+            startButton.onClick.AddListener(StartGame);
+        }
+        if (sliceButton != null)
+        {
+            sliceButton.onClick.AddListener(SliceGame);
+        }
+
     }
 
     private void OnDestroy()
     {
-        startButton.onClick.RemoveListener(StartGame);
-        sliceButton.onClick.RemoveListener(SliceGame);
+        if (startButton != null)
+        {
+            startButton.onClick.RemoveListener(StartGame);
+        }
+        if (sliceButton != null)
+        {
+            sliceButton.onClick.RemoveListener(SliceGame);
+        }
+
     }
     private void StartGame()
     {

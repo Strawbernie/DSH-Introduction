@@ -27,7 +27,7 @@ public class SliceCubeHeal : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Server"))
+        if (other.gameObject.CompareTag("DamageZone"))
         {
             spawnManager.HP++;
             text.text = ("HP:" + spawnManager.HP);

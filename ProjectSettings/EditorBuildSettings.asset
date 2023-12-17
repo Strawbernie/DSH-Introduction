@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BugSlicing.unity
     guid: 1e617913dd52d7845a1605f88460f146
+  - enabled: 1
+    path: Assets/Scenes/BugSlicingEndScreen.unity
+    guid: a9d0c96915bf05d459bfb94bb0a30aee
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: fa7129c593cc4444ea37f285d2f0f567, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: ac9dc035487b6cc49937f4b2ffd35ba2, type: 2}

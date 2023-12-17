@@ -16,10 +16,13 @@ public class SpawnManager : MonoBehaviour
     public TMP_Text text;
     private void Start()
     {
+        ScoreManager.Sliced = 0;
+        ScoreManager.Missed= 0;
         spawnManager = FindObjectOfType<SpawnManager>();
         text = FindObjectOfType<TMP_Text>();
         text.text = ("HP:" + spawnManager.HP);
         StartCoroutine(StartDelay());
+        StartCoroutine(Timer());
     }
     IEnumerator StartDelay()
     {
@@ -51,7 +54,13 @@ public class SpawnManager : MonoBehaviour
     {
         if (HP < 0)
         {
-            SceneManager.LoadScene("Titlescreen");
+            SceneManager.LoadScene("BugSlicingEndScreen");
         }
     }
-}
+    IEnumerator Timer()
+    {
+        yield return new WaitForSeconds(100);
+        SceneManager.LoadScene("BugSlicingEndScreen");
+    }
+
+    }

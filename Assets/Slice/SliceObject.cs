@@ -37,7 +37,8 @@ public class SliceObject : MonoBehaviour
             SetupSlicedComponent(upperHull);
             GameObject lowerHull = hull.CreateLowerHull(target, CrossMaterial);
             SetupSlicedComponent(lowerHull);
-
+            ScoreManager.Sliced++;
+            Debug.Log("sliced:" + ScoreManager.Sliced);
             Destroy(target);
         }
     }
