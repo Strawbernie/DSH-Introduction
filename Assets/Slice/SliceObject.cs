@@ -4,6 +4,7 @@ using UnityEngine;
 using EzySlice;
 using UnityEngine.InputSystem;
 using UnityEngine.Assertions.Must;
+using TMPro;
 
 public class SliceObject : MonoBehaviour
 {
@@ -12,8 +13,14 @@ public class SliceObject : MonoBehaviour
     public VelocityEstimator velocityEstimator;
     public LayerMask sliceableLayer;
     public Material CrossMaterial;
+    public TMP_Text comboText;
+    ComboManager comboManager;
     public float cutforce = 2000f;
 
+    private void Start()
+    {
+      comboManager=FindObjectOfType<ComboManager>();
+    }
     void FixedUpdate()
     {
         bool hasHit= Physics.Linecast(startSlicePoint.position, endSlicePoint.position, out RaycastHit hit, sliceableLayer);
@@ -38,6 +45,11 @@ public class SliceObject : MonoBehaviour
             GameObject lowerHull = hull.CreateLowerHull(target, CrossMaterial);
             SetupSlicedComponent(lowerHull);
             ScoreManager.Sliced++;
+            ScoreManager.currentCombo++;
+            if (ScoreManager.currentCombo > 10)
+            {
+                comboManager.ComboUP();
+            }
             Debug.Log("sliced:" + ScoreManager.Sliced);
             Destroy(target);
         }
@@ -46,8 +58,6 @@ public class SliceObject : MonoBehaviour
     {
         Rigidbody rb = slicedObject.AddComponent<Rigidbody>();
         MeshCollider collider = slicedObject.AddComponent<MeshCollider> ();
-        int LayerSliceable = LayerMask.NameToLayer("Sliceable");
-        slicedObject.layer = LayerSliceable;
         collider.convex = true;
         rb.AddExplosionForce(cutforce, slicedObject.transform.position, 1);
         StartCoroutine(DestroyCooldown(slicedObject));

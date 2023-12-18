@@ -10,7 +10,7 @@ public class ScoreScreen : MonoBehaviour
 
     void Start()
     {
-        text.text = "You sliced " + ScoreManager.Sliced + " Objects and " + "You missed "+ScoreManager.Missed +" Bots";
+        text.text = "You sliced " + ScoreManager.Sliced + " Objects " + "You missed "+ScoreManager.Missed +" Bots" +"                Your highest combo was: "+ScoreManager.highestCombo;
     }
 
 public void TryAgain()

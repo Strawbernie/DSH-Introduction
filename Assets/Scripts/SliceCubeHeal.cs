@@ -30,7 +30,7 @@ public class SliceCubeHeal : MonoBehaviour
         if (other.gameObject.CompareTag("DamageZone"))
         {
             spawnManager.HP++;
-            text.text = ("HP:" + spawnManager.HP);
+spawnManager.CheckHP();
             Destroy(gameObject);
         }
     }

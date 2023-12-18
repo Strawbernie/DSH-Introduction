@@ -8,6 +8,7 @@ public class SliceCubeUpDown : MonoBehaviour
     public GameObject target;
     public float moveSpeed;
     public float verticalSpeed;
+    ComboManager comboManager;
     SpawnManager spawnManager;
     public TMP_Text text;
     bool goingup = false;
@@ -17,6 +18,7 @@ public class SliceCubeUpDown : MonoBehaviour
         target = GameObject.FindWithTag("Server");
         spawnManager = FindObjectOfType<SpawnManager>();
         text = FindObjectOfType<TMP_Text>();
+        comboManager = FindObjectOfType<ComboManager>();
     }
     void Update()
     {
@@ -54,7 +56,7 @@ public class SliceCubeUpDown : MonoBehaviour
             spawnManager.HP--;
             ScoreManager.Missed++;
             Debug.Log("missed:" + ScoreManager.Missed);
-            text.text = ("HP:" + spawnManager.HP);
+            comboManager.UpdateCombo();
             spawnManager.CheckHP();
             Destroy(gameObject);
         }
