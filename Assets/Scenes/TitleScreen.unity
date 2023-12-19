@@ -1604,6 +1604,12 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8610609893423880104, guid: b8da75106ba67f542b0055c7ab7dd4da, type: 3}
+      propertyPath: m_text
+      value: The digital society hub (DSH) is seeking innovative and immersive ways
+        to engage with potential interns and showcase the dynamic environment of
+        the DSH. This is the first prototype of the product developed for DSH.
+      objectReference: {fileID: 0}
     - target: {fileID: 8773113593545488564, guid: b8da75106ba67f542b0055c7ab7dd4da, type: 3}
       propertyPath: m_text
       value: Try Slicing!
