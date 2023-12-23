@@ -53,4 +53,12 @@ public class Cards : MonoBehaviour
             Invoke("MoveToDiscardPile", 1f);
         }
     }
+    public void OnPointerEnter()
+    {
+        transform.localScale += new Vector3(0.0001f, 0.0001f, 0);
+    }
+    public void OnPointerExit()
+    {
+            transform.localScale -= new Vector3(0.0001f, 0.0001f, 0);
+    }
 }
