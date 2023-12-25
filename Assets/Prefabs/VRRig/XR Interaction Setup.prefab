@@ -232,6 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tunnelingVignetteController: {fileID: 2097754241453791753}
+  teleportationProvider: {fileID: 0}
   controllerManager: {fileID: 3511632208363300168}
 --- !u!1 &5365853052419725223
 GameObject:

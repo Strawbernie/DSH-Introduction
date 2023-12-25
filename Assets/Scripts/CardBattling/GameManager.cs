@@ -41,6 +41,11 @@ public List<Cards> deck = new List<Cards>();
             foreach(Cards card in discardPile){
                 deck.Add(card);
             }
+            GameObject[] cardsPlayed = GameObject.FindGameObjectsWithTag("3DCard");
+            foreach(GameObject card in cardsPlayed)
+            {
+                Destroy(card);
+            }
             discardPile.Clear();
         }
     }

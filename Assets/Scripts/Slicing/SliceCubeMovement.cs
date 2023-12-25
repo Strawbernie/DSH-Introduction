@@ -24,7 +24,6 @@ public class SliceCubeMovement : MonoBehaviour
         {
             Vector3 direction = (target.transform.position - transform.position).normalized;
             transform.position += direction * moveSpeed * Time.deltaTime;
-            //gameObject.transform.LookAt(target.transform.position);
         }
     }
     private void OnTriggerEnter(Collider other)

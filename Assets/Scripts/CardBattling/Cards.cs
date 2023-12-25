@@ -6,38 +6,22 @@ using UnityEngine.XR;
 
 public class Cards : MonoBehaviour
 {
-    private InputDevice RightController;
-    private InputData inputData;
     public bool hasBeenPlayed;
     public int handIndex;
     private GameManager gm;
+    public GameObject ThreeDCard;
+    public Card cardInformation;
+    GameObject newCard;
+    public GameObject originPoint;
     void Start()
     {
-        RightController = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
-        inputData = FindObjectOfType<InputData>();
         gm = FindObjectOfType<GameManager>();
     }
     private void Update()
     {
-        //CheckControllerInput(RightController);
+
     }
-    /*private void CheckControllerInput(InputDevice controller)
-    {
-        if (inputData._rightController.TryGetFeatureValue(CommonUsages.triggerButton, out bool RightButton))
-        {
-            if (RightButton)
-            {
-                if(!hasBeenPlayed)
-                {
-                    transform.position += Vector3.up * 5;
-                    hasBeenPlayed= true;
-                    gm.availableCardSlots[handIndex] = true;
-                    Invoke("MoveToDiscardPile",1f);
-                }
-            }
-        }
-    }
-    */
+
     void MoveToDiscardPile()
     {
         gm.discardPile.Add(this);
@@ -50,15 +34,23 @@ public class Cards : MonoBehaviour
             transform.position += Vector3.up * 5;
             hasBeenPlayed = true;
             gm.availableCardSlots[handIndex] = true;
+            newCard = Instantiate(ThreeDCard, originPoint.transform.position, Quaternion.identity);
+            GameObject child = newCard.transform.Find("Cube").gameObject;
+            GameObject canvas = child.transform.Find("Canvas").gameObject;
+            GameObject card = canvas.transform.Find("Card").gameObject;
+            CardDisplay CD = card.GetComponent<CardDisplay>();
+            CD.card = cardInformation;
             Invoke("MoveToDiscardPile", 1f);
         }
     }
     public void OnPointerEnter()
     {
         transform.localScale += new Vector3(0.0001f, 0.0001f, 0);
+        transform.localPosition -= new Vector3(.1f, 0, 0);
     }
     public void OnPointerExit()
     {
             transform.localScale -= new Vector3(0.0001f, 0.0001f, 0);
+        transform.localPosition += new Vector3(.1f, 0, 0);
     }
 }

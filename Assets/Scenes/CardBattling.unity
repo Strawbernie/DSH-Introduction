@@ -432,7 +432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0423069
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_LocalRotation.w
@@ -452,11 +452,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.108932495
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.047771454
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -512,6 +512,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBeenPlayed: 0
   handIndex: 0
+  ThreeDCard: {fileID: 377222622223339610, guid: 7bd0e942071d56d4aa753da18405f4c6, type: 3}
+  cardInformation: {fileID: 11400000, guid: e5a1cd06e5b66b14c9af82b321aab45d, type: 2}
+  originPoint: {fileID: 1967913189}
 --- !u!114 &340449969 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3806911044902524797, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
@@ -723,8 +726,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.32227516, y: 0.32227516, z: 0.22943752}
-  m_Center: {x: 0.00043795258, y: -0.001222521, z: 0.10453894}
+  m_Size: {x: 0.32227516, y: 0.32227516, z: 0.017131897}
+  m_Center: {x: 0.00043794513, y: -0.0012225212, z: 0.21069252}
 --- !u!4 &384367844 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 08545461ee4b2594ea2557dfaeab6f5f, type: 3}
@@ -1691,87 +1694,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 765431157}
   m_CullTransparentMesh: 1
---- !u!1 &837850837
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 837850839}
-  - component: {fileID: 837850838}
-  - component: {fileID: 837850840}
-  m_Layer: 0
-  m_Name: DamageZone
-  m_TagString: DamageZone
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &837850838
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 837850837}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.1092029, y: 3.0149915, z: 7.000042}
-  m_Center: {x: -0.55460143, y: 1.007496, z: 0.018285275}
---- !u!4 &837850839
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 837850837}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.41, y: 0, z: -3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &837850840
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 837850837}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &859757019
 GameObject:
   m_ObjectHideFlags: 0
@@ -2194,7 +2116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0423069
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2214,11 +2136,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.108932495
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.047771454
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2274,6 +2196,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBeenPlayed: 0
   handIndex: 0
+  ThreeDCard: {fileID: 377222622223339610, guid: 7bd0e942071d56d4aa753da18405f4c6, type: 3}
+  cardInformation: {fileID: 11400000, guid: e5a1cd06e5b66b14c9af82b321aab45d, type: 2}
+  originPoint: {fileID: 1967913189}
 --- !u!114 &893400048 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3806911044902524797, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
@@ -3628,9 +3553,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1219120882}
+  - component: {fileID: 1219120883}
   m_Layer: 0
   m_Name: DropLocation
-  m_TagString: Untagged
+  m_TagString: DamageZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3650,6 +3576,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 384367844}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1219120883
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219120881}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.05, y: 0.05, z: 0.05}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1270506635
 GameObject:
   m_ObjectHideFlags: 0
@@ -3822,7 +3769,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0423069
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3842,11 +3789,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.108932495
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.047771454
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3902,6 +3849,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBeenPlayed: 0
   handIndex: 0
+  ThreeDCard: {fileID: 377222622223339610, guid: 7bd0e942071d56d4aa753da18405f4c6, type: 3}
+  cardInformation: {fileID: 11400000, guid: e5a1cd06e5b66b14c9af82b321aab45d, type: 2}
+  originPoint: {fileID: 1967913189}
 --- !u!114 &1448907285 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3806911044902524797, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
@@ -4120,7 +4070,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0423069
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4140,11 +4090,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.108932495
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.047771454
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4200,6 +4150,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBeenPlayed: 0
   handIndex: 0
+  ThreeDCard: {fileID: 377222622223339610, guid: 7bd0e942071d56d4aa753da18405f4c6, type: 3}
+  cardInformation: {fileID: 11400000, guid: e5a1cd06e5b66b14c9af82b321aab45d, type: 2}
+  originPoint: {fileID: 1967913189}
 --- !u!114 &1574826931 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3806911044902524797, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
@@ -4794,7 +4747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0423069
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4814,11 +4767,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.108932495
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.047771454
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4874,6 +4827,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBeenPlayed: 0
   handIndex: 0
+  ThreeDCard: {fileID: 377222622223339610, guid: 7bd0e942071d56d4aa753da18405f4c6, type: 3}
+  cardInformation: {fileID: 11400000, guid: e5a1cd06e5b66b14c9af82b321aab45d, type: 2}
+  originPoint: {fileID: 1967913189}
 --- !u!114 &1864575044 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3806911044902524797, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
@@ -5096,7 +5052,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0423069
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5116,11 +5072,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.108932495
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.047771454
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5176,6 +5132,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBeenPlayed: 0
   handIndex: 0
+  ThreeDCard: {fileID: 377222622223339610, guid: 7bd0e942071d56d4aa753da18405f4c6, type: 3}
+  cardInformation: {fileID: 11400000, guid: e5a1cd06e5b66b14c9af82b321aab45d, type: 2}
+  originPoint: {fileID: 1967913189}
 --- !u!114 &1883171533 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3806911044902524797, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
@@ -5394,7 +5353,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0423069
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5414,11 +5373,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.108932495
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.047771454
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5474,6 +5433,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBeenPlayed: 0
   handIndex: 0
+  ThreeDCard: {fileID: 377222622223339610, guid: 7bd0e942071d56d4aa753da18405f4c6, type: 3}
+  cardInformation: {fileID: 11400000, guid: e5a1cd06e5b66b14c9af82b321aab45d, type: 2}
+  originPoint: {fileID: 1967913189}
 --- !u!114 &1923274337 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3806911044902524797, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
@@ -5906,7 +5868,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0423069
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5926,11 +5888,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.108932495
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.047771454
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5986,6 +5948,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBeenPlayed: 0
   handIndex: 0
+  ThreeDCard: {fileID: 377222622223339610, guid: 7bd0e942071d56d4aa753da18405f4c6, type: 3}
+  cardInformation: {fileID: 11400000, guid: e5a1cd06e5b66b14c9af82b321aab45d, type: 2}
+  originPoint: {fileID: 1967913189}
 --- !u!114 &2008892457 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3806911044902524797, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
@@ -6504,7 +6469,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0423069
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6524,11 +6489,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.108932495
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.047771454
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806911044259182639, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6584,6 +6549,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBeenPlayed: 0
   handIndex: 0
+  ThreeDCard: {fileID: 377222622223339610, guid: 7bd0e942071d56d4aa753da18405f4c6, type: 3}
+  cardInformation: {fileID: 11400000, guid: e5a1cd06e5b66b14c9af82b321aab45d, type: 2}
+  originPoint: {fileID: 1967913189}
 --- !u!114 &2146063493 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3806911044902524797, guid: 73a6e5db9b8dd084b829e85f6d3d6509, type: 3}
@@ -6707,5 +6675,4 @@ SceneRoots:
   - {fileID: 1213631636}
   - {fileID: 1807527279}
   - {fileID: 185668899}
-  - {fileID: 837850839}
   - {fileID: 384367841}
