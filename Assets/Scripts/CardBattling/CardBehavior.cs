@@ -7,13 +7,13 @@ public class CardBehavior : MonoBehaviour
     GameObject target;
     public float moveSpeed;
     bool stopMoving = false;
-
     private void Start()
     {
         target = GameObject.FindWithTag("DamageZone");
     }
     void Update()
     {
+
         if (target != null && !stopMoving)
             {
                 Vector3 direction = (target.transform.position - transform.position).normalized;

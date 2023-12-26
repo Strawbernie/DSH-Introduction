@@ -46,11 +46,9 @@ public class Cards : MonoBehaviour
     public void OnPointerEnter()
     {
         transform.localScale += new Vector3(0.0001f, 0.0001f, 0);
-        transform.localPosition -= new Vector3(.1f, 0, 0);
     }
     public void OnPointerExit()
     {
             transform.localScale -= new Vector3(0.0001f, 0.0001f, 0);
-        transform.localPosition += new Vector3(.1f, 0, 0);
     }
 }
