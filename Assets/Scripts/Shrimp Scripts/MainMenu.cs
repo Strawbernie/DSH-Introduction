@@ -43,6 +43,6 @@ public class MainMenu : MonoBehaviour
     private void SliceGame()
     {
         mainMenu.SetActive(false);
-        LevelManager.Instance.LoadSceneAsync("BugSlicing");
+        LevelManager.Instance.LoadSceneAsync("ChairRacing");
     }
 }

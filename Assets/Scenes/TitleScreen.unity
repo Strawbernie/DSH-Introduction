@@ -311,6 +311,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2581238918269309057, guid: a56467cdc03209442984e88c49b45e73, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3976100744532850538, guid: a56467cdc03209442984e88c49b45e73, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1612,7 +1616,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8773113593545488564, guid: b8da75106ba67f542b0055c7ab7dd4da, type: 3}
       propertyPath: m_text
-      value: Try Slicing!
+      value: Try Racing!
       objectReference: {fileID: 0}
     - target: {fileID: 8834149746487685044, guid: b8da75106ba67f542b0055c7ab7dd4da, type: 3}
       propertyPath: m_AnchorMax.y
