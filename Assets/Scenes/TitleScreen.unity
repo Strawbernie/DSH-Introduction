@@ -319,6 +319,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3976100744532850540, guid: a56467cdc03209442984e88c49b45e73, type: 3}
+      propertyPath: m_DefaultParameters.m_ApertureSize
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6437197848903952273, guid: a56467cdc03209442984e88c49b45e73, type: 3}
       propertyPath: teleportationProvider
       value: 
@@ -372,6 +376,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a56467cdc03209442984e88c49b45e73, type: 3}
+--- !u!1 &698692804 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8966224733587578224, guid: a56467cdc03209442984e88c49b45e73, type: 3}
+  m_PrefabInstance: {fileID: 698692803}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,6 +1130,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1366371638229225597, guid: b8da75106ba67f542b0055c7ab7dd4da, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 698692804}
+    - target: {fileID: 1366371638229225597, guid: b8da75106ba67f542b0055c7ab7dd4da, type: 3}
       propertyPath: sliceButton
       value: 
       objectReference: {fileID: 1933997114}
@@ -1554,7 +1567,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7857830562754183749, guid: b8da75106ba67f542b0055c7ab7dd4da, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8133496647902752752, guid: b8da75106ba67f542b0055c7ab7dd4da, type: 3}
       propertyPath: m_AnchorMax.x

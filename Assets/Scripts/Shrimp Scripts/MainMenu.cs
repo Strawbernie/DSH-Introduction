@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
     public Button startButton;
     public Button sliceButton;
     public GameObject mainMenu;
+    public GameObject player;
     private void Awake()
     {
         if (startButton != null)
@@ -18,7 +19,7 @@ public class MainMenu : MonoBehaviour
         }
         if (sliceButton != null)
         {
-            sliceButton.onClick.AddListener(SliceGame);
+            sliceButton.onClick.AddListener(ChairGame);
         }
 
     }
@@ -31,7 +32,7 @@ public class MainMenu : MonoBehaviour
         }
         if (sliceButton != null)
         {
-            sliceButton.onClick.RemoveListener(SliceGame);
+            sliceButton.onClick.RemoveListener(ChairGame);
         }
 
     }
@@ -40,9 +41,25 @@ public class MainMenu : MonoBehaviour
         mainMenu.SetActive(false);
         LevelManager.Instance.LoadSceneAsync(startButtonSceneName);
     }
-    private void SliceGame()
+    public void ChairGame()
     {
+        StatsManager.spawnLocation = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
+        StatsManager.Rotation = player.transform.rotation;
         mainMenu.SetActive(false);
         LevelManager.Instance.LoadSceneAsync("ChairRacing");
+    }
+    public void SliceGame()
+    {
+        StatsManager.spawnLocation = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
+        StatsManager.Rotation = player.transform.rotation;
+        mainMenu.SetActive(false);
+        LevelManager.Instance.LoadSceneAsync("BugSlicing");
+    }
+    public void CardGame()
+    {
+        StatsManager.spawnLocation = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
+        StatsManager.Rotation = player.transform.rotation;
+        mainMenu.SetActive(false);
+        LevelManager.Instance.LoadSceneAsync("CardBattling");
     }
 }
