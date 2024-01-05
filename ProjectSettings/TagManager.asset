@@ -7,6 +7,7 @@ TagManager:
   - DamageZone
   - Server
   - 3DCard
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
