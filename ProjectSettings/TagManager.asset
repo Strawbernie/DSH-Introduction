@@ -8,6 +8,7 @@ TagManager:
   - Server
   - 3DCard
   - Checkpoint
+  - AICar
   layers:
   - Default
   - TransparentFX
