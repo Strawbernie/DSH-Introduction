@@ -5,6 +5,7 @@ using EzySlice;
 using UnityEngine.InputSystem;
 using UnityEngine.Assertions.Must;
 using TMPro;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class SliceObject : MonoBehaviour
 {
@@ -17,6 +18,11 @@ public class SliceObject : MonoBehaviour
     ComboManager comboManager;
     public float cutforce = 2000f;
 
+    [Range(0, 1)]
+    public float vibrationIntensity;
+    public float duration;
+    public XRBaseController controller;
+
     private void Start()
     {
       comboManager=FindObjectOfType<ComboManager>();
@@ -28,6 +34,7 @@ public class SliceObject : MonoBehaviour
         {
             GameObject target = hit.transform.gameObject;
             Slice(target);
+            controller.SendHapticImpulse(vibrationIntensity, duration);
         }
     }
     public void Slice(GameObject target)

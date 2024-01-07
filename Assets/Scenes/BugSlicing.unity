@@ -542,6 +542,28 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -261468710206068557, guid: d825996b26b729d4d875c04510bfd25b, type: 3}
+--- !u!114 &190328355 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9088795839708603670, guid: 17afe1f707f0b7742af2db473a10b609, type: 3}
+  m_PrefabInstance: {fileID: 1807527279}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289203041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caff514de9b15ad48ab85dcff5508221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &190328356 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9088795838173472246, guid: 17afe1f707f0b7742af2db473a10b609, type: 3}
+  m_PrefabInstance: {fileID: 1807527279}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967913189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caff514de9b15ad48ab85dcff5508221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &253326851
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,6 +618,9 @@ MonoBehaviour:
   CrossMaterial: {fileID: 2100000, guid: 53c16fb5d5c516b40a1f6a8fc34132f3, type: 2}
   comboText: {fileID: 0}
   cutforce: 500
+  vibrationIntensity: 0.3
+  duration: 0.2
+  controller: {fileID: 190328356}
 --- !u!1 &415446218
 GameObject:
   m_ObjectHideFlags: 0
@@ -3038,6 +3063,9 @@ MonoBehaviour:
   CrossMaterial: {fileID: 2100000, guid: 53c16fb5d5c516b40a1f6a8fc34132f3, type: 2}
   comboText: {fileID: 0}
   cutforce: 500
+  vibrationIntensity: 0.3
+  duration: 0.2
+  controller: {fileID: 190328355}
 --- !u!1001 &1807527279
 PrefabInstance:
   m_ObjectHideFlags: 0
