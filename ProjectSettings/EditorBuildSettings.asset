@@ -24,6 +24,6 @@ EditorBuildSettings:
     path: Assets/Scenes/ChairRacing.unity
     guid: 97776d96771743349bad191379c9cec1
   m_configObjects:
-    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: fa7129c593cc4444ea37f285d2f0f567, type: 2}
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 9c2ad421e111c844d9a738afde0f2d10, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: ac9dc035487b6cc49937f4b2ffd35ba2, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 304a460f3264d7d4198dd29944d76dd7, type: 2}

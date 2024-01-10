@@ -10,8 +10,8 @@ public class AIRacing : MonoBehaviour
     float finalVelocity = .8f;
     float currentVelocity = 0f;
     float accelerationRate = .02f;
-    float decelerationRate = .05f;
-    float rotationSpeed = 1.5f;
+    float decelerationRate = .2f;
+    float rotationSpeed = 2f;
     public bool braking;
     public int maxCheckPoints;
     public GameObject[] checkPoints;
@@ -82,8 +82,11 @@ public class AIRacing : MonoBehaviour
     }
     public void Brake()
     {
-        braking = true;
-        StartCoroutine(StopBraking());
+        if (currentVelocity > .2f)
+        {
+            braking = true;
+            StartCoroutine(StopBraking());
+        }
     }
     IEnumerator StopBraking()
     {
