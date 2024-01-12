@@ -20,10 +20,6 @@ public class AIRacing : MonoBehaviour
     public int currentTarget=0;
     public float brakeTime;
     bool crashed;
-    void Start()
-    {
-        checkPoints = GameObject.FindGameObjectsWithTag("Checkpoint");
-    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == "Checkpoint")
