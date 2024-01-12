@@ -20,12 +20,51 @@ public class AIRacing : MonoBehaviour
     public int currentTarget=0;
     public float brakeTime;
     bool crashed;
+    bool checkpoint1 = false;
+    bool checkpoint2 = false;
+    bool checkpoint3 = false;
+    bool checkpoint4 = false;
+    int lap = 0;
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == "Checkpoint")
         {
             previousTarget = other.gameObject;
             currentTarget++;
+        }
+        if (other.transform.tag == "PlayerCheckpoint")
+        {
+            PlayerCheckpoint PC = other.GetComponent<PlayerCheckpoint>();
+            switch (PC.ID)
+            {
+                case 0:
+                    checkpoint1 = true;
+                    break;
+                case 1:
+                    checkpoint2 = true;
+                    break;
+                case 2:
+                    checkpoint3 = true;
+                    break;
+                case 3:
+                    checkpoint4 = true;
+                    break;
+            }
+        }
+        if (other.transform.tag == "Finish")
+        {
+            if (checkpoint1 && checkpoint2 && checkpoint3 && checkpoint4)
+            {
+                lap++;
+                checkpoint1 = false;
+                checkpoint2 = false;
+                checkpoint3 = false;
+                checkpoint4 = false;
+            }
+            if (lap >= 3)
+            {
+                Debug.Log("W");
+            }
         }
     }
     // Update is called once per frame

@@ -9,6 +9,7 @@ TagManager:
   - 3DCard
   - Checkpoint
   - AICar
+  - PlayerCheckpoint
   layers:
   - Default
   - TransparentFX
