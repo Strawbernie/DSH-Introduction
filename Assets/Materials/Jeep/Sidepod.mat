@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Rubber
+  m_Name: Sidepod
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -42,11 +42,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 972e84ed491f6ea42b09e0d3577b7f4c, type: 3}
+        m_Texture: {fileID: 2800000, guid: c0b504b38aaa1174d9de448663621e94, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 6fb8676d3fe96cd4f947cb39d6c8d69e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 67d184ecc986f134ea8d870f665ad722, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -66,19 +66,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 972e84ed491f6ea42b09e0d3577b7f4c, type: 3}
+        m_Texture: {fileID: 2800000, guid: c0b504b38aaa1174d9de448663621e94, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 175ee951bc37a5d4a8946f58341cb127, type: 3}
+        m_Texture: {fileID: 2800000, guid: 242ea7c402b35c446b0394813cdc0c0b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: 3aae39be4ae5cbf4aaf739b15b87331c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0d44de6e33fb2b4428a75e360bb493fe, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: 2e070c8211d1cf6449823afa74d61d21, type: 3}
+        m_Texture: {fileID: 2800000, guid: a10fa32e1846d60409602c3d6121121b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
