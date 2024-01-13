@@ -1503,8 +1503,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 721959511}
   dialogueText: {fileID: 2116578262}
-  canvas: {fileID: 132793346}
+  dialogueCanvas: {fileID: 132793346}
+  dialogueTrigger: {fileID: 2018542304}
   audioManager: {fileID: 1071125053}
+  clipName: CatVoice
 --- !u!4 &1856586397
 Transform:
   m_ObjectHideFlags: 0
@@ -1533,6 +1535,7 @@ GameObject:
   - component: {fileID: 2018542302}
   - component: {fileID: 2018542301}
   - component: {fileID: 2018542304}
+  - component: {fileID: 2018542305}
   m_Layer: 5
   m_Name: StartDialogueButton
   m_TagString: Untagged
@@ -1672,7 +1675,28 @@ MonoBehaviour:
     - Hi im bob
     - im an npc and i am an intern at dsh as well. I am here to show you show to
       do dialogue
-    audioSource: {fileID: 0}
+  buttonCanvas: {fileID: 618006809}
+--- !u!135 &2018542305
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018542299}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1287.4
+  m_Center: {x: -2.76, y: -1.01, z: 0}
 --- !u!1 &2077245444
 GameObject:
   m_ObjectHideFlags: 0

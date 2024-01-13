@@ -10,13 +10,15 @@ public class DialogueManager : MonoBehaviour
     
     private Queue<string> dialogueSentences;
 
-    public Canvas canvas;
+    public Canvas dialogueCanvas;
+    public DialogueTrigger dialogueTrigger;
 
     public AudioManager audioManager;
+    public string clipName;
 
     private void Awake()
     {
-        canvas.gameObject.SetActive(false);
+        dialogueCanvas.gameObject.SetActive(false);
     }
     void Start()
     {
@@ -25,17 +27,19 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        canvas.gameObject.SetActive(true);
+        dialogueCanvas.gameObject.SetActive(true);
+        dialogueTrigger.buttonCanvas.gameObject.SetActive(false);
 
         nameText.text = dialogue.name;
 
-        audioManager.Play("CatVoice");
+        audioManager.Play(clipName);
 
         foreach (string dialogueSentence in dialogue.dialogueSentences)
         {
             dialogueSentences.Enqueue(dialogueSentence);
         }
         DisplayNextSentence();
+
     }
 
     public void DisplayNextSentence()
@@ -52,6 +56,7 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
-        canvas.gameObject.SetActive(false);
+        dialogueCanvas.gameObject.SetActive(false);
+        dialogueTrigger.buttonCanvas.gameObject.SetActive(false);
     }
 }
