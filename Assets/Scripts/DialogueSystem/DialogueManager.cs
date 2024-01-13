@@ -1,10 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
+    public TMP_Text nameText;
+    public TMP_Text dialogueText;
+    
     private Queue<string> dialogueSentences;
+
+    public Canvas canvas;
+
+    public AudioManager audioManager;
+
+    private void Awake()
+    {
+        canvas.gameObject.SetActive(false);
+    }
     void Start()
     {
         dialogueSentences= new Queue<string>();
@@ -12,16 +25,17 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        Debug.Log("starting dialogue with " + dialogue.name);
+        canvas.gameObject.SetActive(true);
 
-        dialogueSentences.Clear();
+        nameText.text = dialogue.name;
+
+        audioManager.Play("CatVoice");
 
         foreach (string dialogueSentence in dialogue.dialogueSentences)
         {
             dialogueSentences.Enqueue(dialogueSentence);
-
-            DisplayNextSentence();
         }
+        DisplayNextSentence();
     }
 
     public void DisplayNextSentence()
@@ -33,11 +47,11 @@ public class DialogueManager : MonoBehaviour
         }
 
         string dialogueSentence = dialogueSentences.Dequeue();
-        Debug.Log(dialogueSentence);
+        dialogueText.text = dialogueSentence;
     }
 
     public void EndDialogue()
     {
-        Debug.Log("End of conversation");
+        canvas.gameObject.SetActive(false);
     }
 }
