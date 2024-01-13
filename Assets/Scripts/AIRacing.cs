@@ -11,7 +11,7 @@ public class AIRacing : MonoBehaviour
     float currentVelocity = 0f;
     float accelerationRate = .02f;
     float decelerationRate = .2f;
-    float rotationSpeed = 2f;
+    float rotationSpeed = 2.5f;
     public bool braking;
     public int maxCheckPoints;
     public GameObject[] checkPoints;
