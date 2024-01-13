@@ -16,7 +16,7 @@ public class AIRacing : MonoBehaviour
     public int maxCheckPoints;
     public GameObject[] checkPoints;
     public GameObject target;
-    GameObject previousTarget;
+    public GameObject previousTarget;
     public int currentTarget=0;
     public float brakeTime;
     bool crashed;
@@ -24,12 +24,19 @@ public class AIRacing : MonoBehaviour
     bool checkpoint2 = false;
     bool checkpoint3 = false;
     bool checkpoint4 = false;
+    float yRot;
     int lap = 0;
+    Racing player;
+    private void Start()
+    {
+        player = FindObjectOfType<Racing>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == "Checkpoint")
         {
             previousTarget = other.gameObject;
+            yRot = gameObject.transform.rotation.y;
             currentTarget++;
         }
         if (other.transform.tag == "PlayerCheckpoint")
@@ -63,6 +70,7 @@ public class AIRacing : MonoBehaviour
             }
             if (lap >= 3)
             {
+                player.lost = true;
                 Debug.Log("W");
             }
         }
@@ -77,6 +85,7 @@ public class AIRacing : MonoBehaviour
             currentVelocity= 0f;
             brakeTime = 1;
             gameObject.transform.position = new Vector3(previousTarget.transform.position.x, 1, previousTarget.transform.position.z);
+            gameObject.transform.rotation = new Quaternion(0, yRot, 0, 0);
             StartCoroutine(StopBraking());
         }
         if (currentTarget >= maxCheckPoints)

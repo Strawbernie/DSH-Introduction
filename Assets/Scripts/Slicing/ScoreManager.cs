@@ -8,4 +8,5 @@ public static class ScoreManager
     public static int Missed;
     public static int currentCombo;
     public static int highestCombo;
+    public static bool wonRacing;
 }

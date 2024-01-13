@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.XR;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Racing : MonoBehaviour
 {
@@ -11,15 +13,23 @@ public class Racing : MonoBehaviour
     private InputDevice LeftController;
     public InputData inputData;
     float initialVelocity = 0f;
-    float finalVelocity = 1f;
+    float finalVelocity = .8f;
     float currentVelocity = 0f;
-    float accelerationRate = .01f;
+    float accelerationRate = .02f;
     float decelerationRate = .05f;
     bool checkpoint1 = false;
     bool checkpoint2 = false;
     bool checkpoint3 = false;
     bool checkpoint4 = false;
     int lap = 0;
+    bool crashed;
+    bool accelerating;
+    public GameObject previousTarget;
+    public TextMeshProUGUI text;
+    public TextMeshProUGUI result;
+    float yRot;
+    public bool lost;
+    bool wantsReset;
     void Start()
     {
         RightController = InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);
@@ -31,6 +41,24 @@ public class Racing : MonoBehaviour
         CheckControllerInput(RightController);
         CheckControllerInput(LeftController);
         currentVelocity = Mathf.Clamp(currentVelocity, initialVelocity, finalVelocity);
+        text.text = ("Lap"+(lap+1)+"/3");
+        if (!crashed && gameObject.transform.position.y < -.5f||wantsReset)
+        {
+            wantsReset = false;
+            crashed = true;
+            currentVelocity = 0f;
+            gameObject.transform.position = new Vector3(previousTarget.transform.position.x, 1, previousTarget.transform.position.z);
+            gameObject.transform.rotation = new Quaternion(0, yRot, 0,0);
+            StartCoroutine(StopBraking());
+        }
+        }
+    IEnumerator StopBraking()
+    {
+        yield return new WaitForSeconds(1);
+        if (crashed)
+        {
+            crashed = false;
+        }
     }
     public void OnTriggerEnter(Collider other)
     {
@@ -53,6 +81,11 @@ public class Racing : MonoBehaviour
                     break;
             }
         }
+        if (other.transform.tag == "Checkpoint")
+        {
+            previousTarget = other.gameObject;
+            yRot= gameObject.transform.rotation.y;
+        }
         if (other.transform.tag == "Finish")
         {
             if (checkpoint1 && checkpoint2 && checkpoint3 && checkpoint4) 
@@ -65,13 +98,35 @@ public class Racing : MonoBehaviour
             }
             if(lap>=3)
             {
-                Debug.Log("W");
+                if (lost)
+                {
+                    ScoreManager.wonRacing = false;
+                    result.text = "You Lost!";
+                    Invoke("LoadEndScreen", 3f);
+                }
+                else
+                {
+                    ScoreManager.wonRacing = true;
+                    result.text = "You Win!";
+                    Invoke("LoadEndScreen", 3f);
+                }
             }
         }
     }
+    void LoadEndScreen()
+    {
+        SceneManager.LoadScene("RacingEndScreen");
+    }
     private void CheckControllerInput(InputDevice controller)
     {
-        if (inputData._leftController.TryGetFeatureValue(CommonUsages.triggerButton, out bool LeftButton))
+        if (inputData._rightController.TryGetFeatureValue(CommonUsages.primaryButton, out bool YButton))
+        {
+            if (YButton)
+            {
+                wantsReset= true;
+            }
+        }
+                if (inputData._leftController.TryGetFeatureValue(CommonUsages.triggerButton, out bool LeftButton))
         {
             if (LeftButton)
             {
@@ -79,23 +134,19 @@ public class Racing : MonoBehaviour
                 transform.Translate(0, 0, currentVelocity);
             }
         }
-        else
-        {
-            currentVelocity = currentVelocity - (decelerationRate * Time.deltaTime);
-            if (currentVelocity > 0)
-            {
-                transform.Translate(0, 0, currentVelocity);
-            }
-            else
-            {
-                transform.Translate(0, 0, 0);
-            }
-        }
         if (inputData._rightController.TryGetFeatureValue(CommonUsages.triggerButton, out bool RightButton))
         {
             if (RightButton)
             {
-               
+                currentVelocity = currentVelocity - (decelerationRate * Time.deltaTime);
+                if (currentVelocity > 0)
+                {
+                    transform.Translate(0, 0, currentVelocity);
+                }
+                else
+                {
+                    transform.Translate(0, 0, 0);
+                }
             }
         }
     }
