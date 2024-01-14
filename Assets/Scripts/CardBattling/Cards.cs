@@ -39,8 +39,9 @@ public class Cards : MonoBehaviour
             GameObject canvas = child.transform.Find("Canvas").gameObject;
             GameObject card = canvas.transform.Find("Card").gameObject;
             CardDisplay CD = card.GetComponent<CardDisplay>();
+            gm.ApplyEffect(cardInformation.cardID);
             CD.card = cardInformation;
-            Invoke("MoveToDiscardPile", 1f);
+            MoveToDiscardPile();
         }
     }
     public void OnPointerEnter()

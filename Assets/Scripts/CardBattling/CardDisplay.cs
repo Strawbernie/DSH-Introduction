@@ -25,8 +25,6 @@ public class CardDisplay : MonoBehaviour {
 
 		mentalText.text = card.mentalCost.ToString();
 		attackText.text = card.damage.ToString();
-		blockText.text = card.block.ToString();
-		rarity.color = card.rarity1;
 	}
 	
 }

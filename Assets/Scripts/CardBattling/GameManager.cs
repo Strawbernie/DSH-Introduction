@@ -9,9 +9,18 @@ public List<Cards> deck = new List<Cards>();
     public List<Cards> discardPile = new List<Cards>();
     public Transform[] cardSlots;
     public bool[] availableCardSlots;
+    public SatisfactionBar satisfactionBar;
+    public int currentHealth = 50;
 
     public TextMeshProUGUI deckSizeText;
     public TextMeshProUGUI discardSizeText;
+    private void Start()
+    {
+        {
+            satisfactionBar.SetMaxHealth(currentHealth);
+            satisfactionBar.SetHealth(currentHealth/2);
+        }
+    }
     public void DrawCard()
     {
         if(deck.Count >= 1){
@@ -32,6 +41,28 @@ public List<Cards> deck = new List<Cards>();
                     return;
                 }
             }
+        }
+    }
+    public void ApplyEffect(int ID)
+    {
+        switch (ID)
+        {
+            case 0:
+                currentHealth = +50;
+                satisfactionBar.SetHealth(currentHealth);
+                break;
+            case 1:
+                //Apply ID logic here
+                break;
+            case 2:
+                //Apply ID logic here
+                break;
+            case 3:
+                //Apply ID logic here
+                break;
+            case 4:
+                //Apply ID logic here
+                break;
         }
     }
     public void Shuffle()
