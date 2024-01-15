@@ -6,6 +6,12 @@ using TMPro;
 public class ComboManager : MonoBehaviour
 {
     public TMP_Text text;
+    private void Start()
+    {
+        {
+            ScoreManager.currentCombo = 0;
+        }
+    }
     public void UpdateCombo()
     {
         if (ScoreManager.currentCombo > ScoreManager.highestCombo)
