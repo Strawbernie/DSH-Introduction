@@ -10578,7 +10578,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!1001 &1832344375
 PrefabInstance:
@@ -12140,6 +12140,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3930751654457535706, guid: 1b88a36552bb0784597b1615902389cc, type: 3}
+      propertyPath: m_Mass
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3930751654457535706, guid: 1b88a36552bb0784597b1615902389cc, type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 6622616699867066779, guid: 1b88a36552bb0784597b1615902389cc, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -12885,6 +12893,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8379166257341811177, guid: f7f20258d061b494aa5f548b1b2f2878, type: 3}
+      propertyPath: m_Mass
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8379166257341811177, guid: f7f20258d061b494aa5f548b1b2f2878, type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13242,6 +13258,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7327179920775219062, guid: 3c73b37c4ba57a24ab0fec514cc3fbea, type: 3}
+      propertyPath: m_Mass
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7327179920775219062, guid: 3c73b37c4ba57a24ab0fec514cc3fbea, type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 8198657579391552537, guid: 3c73b37c4ba57a24ab0fec514cc3fbea, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11
@@ -13366,6 +13390,14 @@ PrefabInstance:
     - target: {fileID: 3510251079682555198, guid: ad39eb06e09a30b44a82c9d6a00fb108, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042927808501805320, guid: ad39eb06e09a30b44a82c9d6a00fb108, type: 3}
+      propertyPath: m_Mass
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042927808501805320, guid: ad39eb06e09a30b44a82c9d6a00fb108, type: 3}
+      propertyPath: m_Constraints
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 6504869231112248454, guid: ad39eb06e09a30b44a82c9d6a00fb108, type: 3}
       propertyPath: m_Layer
@@ -14099,6 +14131,14 @@ PrefabInstance:
     - target: {fileID: 8099052042425118972, guid: e4cdf19f235570b40b8f308db23378f4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8626447966802022765, guid: e4cdf19f235570b40b8f308db23378f4, type: 3}
+      propertyPath: m_Mass
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8626447966802022765, guid: e4cdf19f235570b40b8f308db23378f4, type: 3}
+      propertyPath: m_Constraints
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 8876115755982580294, guid: e4cdf19f235570b40b8f308db23378f4, type: 3}
       propertyPath: m_Name

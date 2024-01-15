@@ -13,7 +13,7 @@ public class Racing : MonoBehaviour
     private InputDevice LeftController;
     public InputData inputData;
     float initialVelocity = 0f;
-    float finalVelocity = .8f;
+    float finalVelocity = .5f;
     float currentVelocity = 0f;
     float accelerationRate = .02f;
     float decelerationRate = .05f;

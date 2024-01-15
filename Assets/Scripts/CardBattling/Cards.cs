@@ -39,7 +39,7 @@ public class Cards : MonoBehaviour
             GameObject canvas = child.transform.Find("Canvas").gameObject;
             GameObject card = canvas.transform.Find("Card").gameObject;
             CardDisplay CD = card.GetComponent<CardDisplay>();
-            gm.ApplyEffect(cardInformation.cardID);
+            gm.ApplyEffect(cardInformation.cardID,cardInformation);
             CD.card = cardInformation;
             MoveToDiscardPile();
         }

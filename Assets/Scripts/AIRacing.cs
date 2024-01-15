@@ -7,7 +7,7 @@ public class AIRacing : MonoBehaviour
 {
     public float movementSpeed;
     float initialVelocity = 0f;
-    float finalVelocity = .8f;
+    float finalVelocity = .5f;
     float currentVelocity = 0f;
     float accelerationRate = .02f;
     float decelerationRate = .2f;
@@ -35,9 +35,12 @@ public class AIRacing : MonoBehaviour
     {
         if (other.transform.tag == "Checkpoint")
         {
-            previousTarget = other.gameObject;
-            yRot = gameObject.transform.rotation.y;
-            currentTarget++;
+            if(other.gameObject == target)
+            {
+                previousTarget = other.gameObject;
+                yRot = gameObject.transform.rotation.y;
+                currentTarget++;
+            }
         }
         if (other.transform.tag == "PlayerCheckpoint")
         {

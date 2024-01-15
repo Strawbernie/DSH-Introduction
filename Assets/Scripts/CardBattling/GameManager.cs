@@ -10,15 +10,15 @@ public List<Cards> deck = new List<Cards>();
     public Transform[] cardSlots;
     public bool[] availableCardSlots;
     public SatisfactionBar satisfactionBar;
-    public int currentHealth = 50;
+    public int currentHealth = 500;
 
     public TextMeshProUGUI deckSizeText;
     public TextMeshProUGUI discardSizeText;
     private void Start()
     {
         {
-            satisfactionBar.SetMaxHealth(currentHealth);
-            satisfactionBar.SetHealth(currentHealth/2);
+            satisfactionBar.SetMaxHealth(1000);
+            satisfactionBar.SetHealth(currentHealth);
         }
     }
     public void DrawCard()
@@ -43,25 +43,64 @@ public List<Cards> deck = new List<Cards>();
             }
         }
     }
-    public void ApplyEffect(int ID)
+    public void ApplyEffect(int ID,Card card)
     {
         switch (ID)
         {
             case 0:
-                currentHealth = +50;
+                if (satisfactionBar.Type == card.Type)
+                {
+                    currentHealth +=(50*2);
+                }
+                else
+                {
+                    currentHealth +=50;
+                }
                 satisfactionBar.SetHealth(currentHealth);
                 break;
             case 1:
-                //Apply ID logic here
+                if (satisfactionBar.Type == card.Type)
+                {
+                    currentHealth +=(60 * 2);
+                }
+                else
+                {
+                    currentHealth +=40;
+                }
+                satisfactionBar.SetHealth(currentHealth);
                 break;
             case 2:
-                //Apply ID logic here
+                if (satisfactionBar.Type == card.Type)
+                {
+                    currentHealth +=(70 * 2);
+                }
+                else
+                {
+                    currentHealth +=30;
+                }
+                satisfactionBar.SetHealth(currentHealth);
                 break;
             case 3:
-                //Apply ID logic here
+                if (satisfactionBar.Type == card.Type)
+                {
+                    currentHealth +=(80 * 2);
+                }
+                else
+                {
+                    currentHealth +=20;
+                }
+                satisfactionBar.SetHealth(currentHealth);
                 break;
             case 4:
-                //Apply ID logic here
+                if (satisfactionBar.Type == card.Type)
+                {
+                    currentHealth +=(90 * 2);
+                }
+                else
+                {
+                    currentHealth +=10;
+                }
+                satisfactionBar.SetHealth(currentHealth);
                 break;
         }
     }

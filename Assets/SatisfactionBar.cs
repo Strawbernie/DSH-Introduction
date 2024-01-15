@@ -8,6 +8,7 @@ public class SatisfactionBar : MonoBehaviour
 {
     public Slider slider;
     public Gradient gradient;
+    public int Type;
     public Image fill;
     public void SetMaxHealth(int health)
     {

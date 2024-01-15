@@ -6,6 +6,7 @@ using UnityEngine;
 public class Card : ScriptableObject
 {
     public int cardID;
+    public int Type;
     public string cardName;
     public string cardDescription;
 

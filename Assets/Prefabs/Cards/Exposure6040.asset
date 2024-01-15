@@ -10,15 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5d9b1a60509e2b4c85d6248d73d07b9, type: 3}
-  m_Name: TestCard
+  m_Name: Exposure6040
   m_EditorClassIdentifier: 
-  cardName: Cool Card
+  cardID: 1
+  Type: 0
+  cardName: Exposure 60/40
   cardDescription: It's Very cool
   cardSprite: {fileID: 21300000, guid: db3e7b7c8db355e499429545071a0321, type: 3}
-  rarity: 2
-  rarity1: {r: 0.9427508, g: 1, b: 0, a: 1}
   mentalCost: 3
   damage: 6
-  block: 4
-  doesWeaken: 0
-  doesVulnerable: 0
