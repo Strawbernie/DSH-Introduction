@@ -29,7 +29,7 @@ public class Cards : MonoBehaviour
     }
     public void PlayCard()
     {
-        if (!hasBeenPlayed)
+        if (!hasBeenPlayed&&!gm.cantplay)
         {
             transform.position += Vector3.up * 5;
             hasBeenPlayed = true;
@@ -42,6 +42,7 @@ public class Cards : MonoBehaviour
             gm.ApplyEffect(cardInformation.cardID,cardInformation);
             CD.card = cardInformation;
             MoveToDiscardPile();
+            gm.SayNextLine();
         }
     }
     public void OnPointerEnter()

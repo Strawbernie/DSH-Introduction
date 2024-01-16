@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5d9b1a60509e2b4c85d6248d73d07b9, type: 3}
   m_Name: Exposure9010
   m_EditorClassIdentifier: 
-  cardID: 4
-  Type: 0
+  cardID: 14
+  Type: 1
   cardName: Exposure 90/10
-  cardDescription: It's Very cool
+  cardDescription: 'Conducting a thorough competitive analysis will provide insights
+    into our competitive exposure. '
   cardSprite: {fileID: 21300000, guid: db3e7b7c8db355e499429545071a0321, type: 3}
   mentalCost: 3
   damage: 6

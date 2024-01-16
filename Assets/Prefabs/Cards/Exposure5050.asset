@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5d9b1a60509e2b4c85d6248d73d07b9, type: 3}
   m_Name: Exposure5050
   m_EditorClassIdentifier: 
-  cardID: 0
-  Type: 0
+  cardID: 10
+  Type: 1
   cardName: Exposure 50/50
-  cardDescription: It's Very cool
+  cardDescription: To enhance brand exposure, we should invest in consistent and
+    engaging branding across all touchpoints.
   cardSprite: {fileID: 21300000, guid: db3e7b7c8db355e499429545071a0321, type: 3}
   mentalCost: 3
   damage: 6
