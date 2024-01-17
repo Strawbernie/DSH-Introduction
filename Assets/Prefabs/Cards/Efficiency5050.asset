@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardID: 0
   Type: 0
-  cardName: Regularly reviewing resource allocation based on project demands and
-    employee skill sets will ensure optimal utilization.
-  cardDescription: It's Very cool
+  cardName: Efficiency 50/50
+  cardDescription: Regularly reviewing resource allocation based on project demands
+    and employee skill sets will ensure optimal utilization.
   cardSprite: {fileID: 21300000, guid: db3e7b7c8db355e499429545071a0321, type: 3}
   mentalCost: 3
   damage: 6

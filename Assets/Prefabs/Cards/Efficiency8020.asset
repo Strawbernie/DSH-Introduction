@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardID: 3
   Type: 0
-  cardName: Implementing regular feedback mechanisms, such as surveys or open forums,
-    can help us understand the challenges faced by employees.
-  cardDescription: It's Very cool
+  cardName: Efficiency 80/20
+  cardDescription: Implementing regular feedback mechanisms, such as surveys or open
+    forums, can help us understand the challenges faced by employees.
   cardSprite: {fileID: 21300000, guid: db3e7b7c8db355e499429545071a0321, type: 3}
   mentalCost: 3
   damage: 6

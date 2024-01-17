@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardID: 4
   Type: 0
-  cardName: We can conduct a thorough process analysis to identify redundant steps
-    and implement lean methodologies.
-  cardDescription: It's Very cool
+  cardName: Efficiency 90/10
+  cardDescription: We can conduct a thorough process analysis to identify redundant
+    steps and implement lean methodologies.
   cardSprite: {fileID: 21300000, guid: db3e7b7c8db355e499429545071a0321, type: 3}
   mentalCost: 3
   damage: 6
