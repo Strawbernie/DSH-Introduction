@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR;
 
 public class OptionsMenu : MonoBehaviour
 {
@@ -15,13 +16,43 @@ public class OptionsMenu : MonoBehaviour
     public Toggle vignetteToggle;
     public Toggle teleportationToggle;
     //UI for Quiz
+    public GameObject CalcArms;
     public GameObject Picked;
     public GameObject Confirm;
     public GameObject Experience;
     public GameObject Movement;
     public GameObject Sickness;
     public GameObject Often;
-
+    private InputDevice RightController;
+    public GameObject leftController;
+    public GameObject rightController;
+    public InputData inputData;
+    float distance;
+    private void Start()
+    {
+        RightController = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
+    }
+    private void Update()
+    {
+        CheckControllerInput(RightController);
+    }
+    private void CheckControllerInput(InputDevice controller)
+    {
+        if (inputData._rightController.TryGetFeatureValue(CommonUsages.primaryButton, out bool AButton))
+        {
+            if (AButton)
+            {
+                distance = Vector3.Distance(rightController.transform.position, leftController.transform.position);
+                Debug.Log("" + distance);
+                if (distance > 1.2f)
+                {
+                    ScoreManager.armLength = distance;
+                    Experience.SetActive(true);
+                    CalcArms.SetActive(false);
+                }
+            }
+        }
+    }
     private void Awake()
     {
         settingsManager = FindObjectOfType<XRSettingsManager>();

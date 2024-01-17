@@ -8,9 +8,7 @@ public class ComboManager : MonoBehaviour
     public TMP_Text text;
     private void Start()
     {
-        {
             ScoreManager.currentCombo = 0;
-        }
     }
     public void UpdateCombo()
     {
@@ -31,6 +29,9 @@ public class ComboManager : MonoBehaviour
         {
             text.text = ("");
         }
-
+        if (ScoreManager.currentCombo > ScoreManager.highestCombo)
+        {
+            ScoreManager.highestCombo = ScoreManager.currentCombo;
+        }
     }
 }

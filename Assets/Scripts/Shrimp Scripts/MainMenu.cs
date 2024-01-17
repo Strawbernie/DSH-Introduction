@@ -2,15 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR;
 
 public class MainMenu : MonoBehaviour
 {
     public string startButtonSceneName;
-    
     public Button startButton;
     public Button sliceButton;
     public GameObject mainMenu;
     public GameObject player;
+
+
     private void Awake()
     {
         if (startButton != null)
@@ -36,6 +38,7 @@ public class MainMenu : MonoBehaviour
         }
 
     }
+
     private void StartGame()
     {
         mainMenu.SetActive(false);

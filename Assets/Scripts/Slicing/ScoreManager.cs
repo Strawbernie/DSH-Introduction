@@ -4,6 +4,7 @@ using UnityEngine;
 
 public static class ScoreManager
 {
+    public static float armLength;
     public static int Sliced;
     public static int Missed;
     public static int currentCombo;

@@ -15,15 +15,45 @@ public class SpawnManager : MonoBehaviour
     public float HP;
     public TMP_Text text;
     float maxRange;
+    float zPosMinimum;
+    float zPosMaximum;
+    public TextMeshProUGUI countdownText;
+    public float totalTime = 120f;
     private void Start()
     {
         ScoreManager.Sliced = 0;
         ScoreManager.Missed= 0;
         maxRange = 13;
+        zPosMinimum = ScoreManager.armLength * 1.5f;
+        zPosMaximum = ScoreManager.armLength * -3.5f;
         spawnManager = FindObjectOfType<SpawnManager>();
         text.text = ("HP:" + spawnManager.HP);
         StartCoroutine(StartDelay());
-        StartCoroutine(Timer());
+        UpdateTimerDisplay();
+        InvokeRepeating("UpdateTimer", 1f, 1f);
+    }
+    void UpdateTimer()
+    {
+        totalTime -= 1f;
+        UpdateTimerDisplay();
+        if (totalTime < 60)
+        {
+            maxRange = 16;
+        }
+        if (totalTime <= 0f)
+        {
+            SceneManager.LoadScene("BugSlicingEndScreen");
+        CancelInvoke("UpdateTimer");
+        }
+    }
+
+    void UpdateTimerDisplay()
+    {
+        int minutes = Mathf.FloorToInt(totalTime / 60f);
+        int seconds = Mathf.FloorToInt(totalTime % 60f);
+
+        string timerString = string.Format("{0:00}:{1:00}", minutes, seconds);
+        countdownText.text = timerString;
     }
     IEnumerator StartDelay()
     {
@@ -33,7 +63,7 @@ public class SpawnManager : MonoBehaviour
     IEnumerator SpawnLeft()
     {
         float yPos = (Random.Range(.75f, 1.5f));
-        float zPos = (Random.Range(3f, -7f));
+        float zPos = (Random.Range(zPosMinimum, zPosMaximum));
         float prefabID = (Random.Range(1, maxRange));
         if (prefabID < 8)
         {
@@ -82,13 +112,6 @@ public class SpawnManager : MonoBehaviour
         {
             SceneManager.LoadScene("BugSlicingEndScreen");
         }
-    }
-    IEnumerator Timer()
-    {
-        yield return new WaitForSeconds(50);
-        maxRange = 16;
-        yield return new WaitForSeconds(50);
-        SceneManager.LoadScene("BugSlicingEndScreen");
     }
 
     }
