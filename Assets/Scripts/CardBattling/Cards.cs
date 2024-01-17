@@ -13,6 +13,7 @@ public class Cards : MonoBehaviour
     public Card cardInformation;
     GameObject newCard;
     public GameObject originPoint;
+    public bool bigger;
     void Start()
     {
         gm = FindObjectOfType<GameManager>();
@@ -47,10 +48,12 @@ public class Cards : MonoBehaviour
     }
     public void OnPointerEnter()
     {
+        bigger = true;
         transform.localScale += new Vector3(0.0001f, 0.0001f, 0);
     }
     public void OnPointerExit()
     {
+        bigger = false;
             transform.localScale -= new Vector3(0.0001f, 0.0001f, 0);
     }
 }

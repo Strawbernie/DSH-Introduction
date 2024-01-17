@@ -8,12 +8,11 @@ using UnityEngine.SceneManagement;
 
 public class Racing : MonoBehaviour
 {
-  public float movementSpeed;
     private InputDevice RightController;
     private InputDevice LeftController;
     public InputData inputData;
     float initialVelocity = 0f;
-    float finalVelocity = .5f;
+    float finalVelocity = .2f;
     float currentVelocity = 0f;
     float accelerationRate = .02f;
     float decelerationRate = .05f;

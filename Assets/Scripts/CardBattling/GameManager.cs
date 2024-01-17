@@ -1,7 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,18 +12,70 @@ public List<Cards> deck = new List<Cards>();
     public SatisfactionBar satisfactionBar;
     public int currentHealth = 500;
     int QuestionNumber;
+    public GameObject NextLevelButton;
+    public GameObject DSHButton;
+    public GameObject TryAgainButton;
 
     public bool cantplay;
     public TextMeshProUGUI question;
     public TextMeshProUGUI deckSizeText;
     public TextMeshProUGUI discardSizeText;
+    public TextMeshProUGUI CountDownTimer;
+    public float totalTime = 60f;
+    bool timerPaused;
     private void Start()
     {
-        {
             satisfactionBar.SetMaxHealth(1000);
             satisfactionBar.SetHealth(currentHealth);
             SayNextLine();
+            UpdateTimerDisplay();
+            InvokeRepeating("UpdateTimer", 1f, 1f);
+    }
+    public void StartNextLevel()
+    {
+        timerPaused= false;
+        UpdateTimerDisplay();
+        InvokeRepeating("UpdateTimer", 1f, 1f);
+        totalTime = 60f;
+        cantplay = false;
+        SayNextLine();
+        NextLevelButton.SetActive(false);
+    }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("XRInteractionTookitDemo");
+    }
+    public void TryAgain()
+    {
+        SceneManager.LoadScene("CardBattling");
+    }
+    void UpdateTimer()
+    {
+        if(!timerPaused)
+        {
+            totalTime -= 1f;
+            currentHealth -= 5;
+            satisfactionBar.SetHealth(currentHealth);
+            UpdateTimerDisplay();
         }
+
+        if (totalTime <= 0f)
+        {
+            question.text = ("You failed to impress me.");
+            DSHButton.SetActive(true);
+            TryAgainButton.SetActive(true);
+            cantplay = true;
+            CancelInvoke("UpdateTimer");
+        }
+    }
+
+    void UpdateTimerDisplay()
+    {
+        int minutes = Mathf.FloorToInt(totalTime / 60f);
+        int seconds = Mathf.FloorToInt(totalTime % 60f);
+
+        string timerString = string.Format("{0:00}:{1:00}", minutes, seconds);
+        CountDownTimer.text = timerString;
     }
     public void DrawCard()
     {
@@ -310,8 +362,21 @@ public List<Cards> deck = new List<Cards>();
                 }
             case 6:
                 {
+                    CancelInvoke("UpdateTimer");
+                    timerPaused = true;
+                    cantplay = true;
                     satisfactionBar.Type++;
-                    question.text = ("What strategies do we have in place to increase our market exposure and reach a wider audience? Are there untapped market segments we should explore?");
+                    if (satisfactionBar.slider.value < 500)
+                    {
+                        question.text = ("You failed to impress me.");
+                        DSHButton.SetActive(true);
+                        TryAgainButton.SetActive(true);
+                    }
+                    else
+                    {
+                        NextLevelButton.SetActive(true);
+                        question.text = ("Thank you, that's all I needed to know");
+                    }
                     break;
                 }
             case 7:
@@ -336,12 +401,26 @@ public List<Cards> deck = new List<Cards>();
                 }
             case 11:
                 {
-                    question.text = ("How can we improve our profit margins in the short term and sustainably over the long term? Are there specific product lines or services where we can optimize pricing strategies?");
+                    question.text = ("What strategies do we have in place to increase our market exposure and reach a wider audience? Are there untapped market segments we should explore?");
                     break;
                 }
             case 12:
                 {
-                    question.text = ("What cost-cutting measures can we implement without compromising product or service quality? Are there operational efficiencies we can achieve to reduce overall costs and boost profitability?");
+                    CancelInvoke("UpdateTimer");
+                    timerPaused = true;
+                    cantplay = true;
+                    satisfactionBar.Type++;
+                    if (satisfactionBar.slider.value < 500)
+                    {
+                        question.text = ("You failed to impress me.");
+                        DSHButton.SetActive(true);
+                        TryAgainButton.SetActive(true);
+                    }
+                    else
+                    {
+                        NextLevelButton.SetActive(true);
+                        question.text = ("Thank you, that's all I needed to know");
+                    }
                     break;
                 }
             case 13:
@@ -361,7 +440,31 @@ public List<Cards> deck = new List<Cards>();
                 }
             case 16:
                 {
-                    question.text = ("Thanks, that's all we needed to know.");
+                    question.text = ("How can we improve our profit margins in the short term and sustainably over the long term? Are there specific product lines or services where we can optimize pricing strategies?");
+                    break;
+                }
+                     case 17:
+                {
+                    question.text = ("What cost-cutting measures can we implement without compromising product or service quality? Are there operational efficiencies we can achieve to reduce overall costs and boost profitability?");
+                    break;
+                }
+                case 18:
+                {
+                    CancelInvoke("UpdateTimer");
+                    timerPaused = true;
+                    cantplay = true;
+                    if (satisfactionBar.slider.value < 500)
+                    {
+                        question.text = ("You failed to impress me.");
+                        DSHButton.SetActive(true);
+                        TryAgainButton.SetActive(true);
+                    }
+                    else
+                    {
+                        question.text = ("You impressed me. Good job!");
+                        DSHButton.SetActive(true);
+                        TryAgainButton.SetActive(true);
+                    }
                     break;
                 }
         }
@@ -371,8 +474,13 @@ public List<Cards> deck = new List<Cards>();
         if(discardPile.Count >= 1)
         {
             foreach(Cards card in discardPile){
+                if (card.bigger)
+                {
+                    card.OnPointerExit();
+                }
                 deck.Add(card);
             }
+
             GameObject[] cardsPlayed = GameObject.FindGameObjectsWithTag("3DCard");
             foreach(GameObject card in cardsPlayed)
             {
