@@ -78,7 +78,6 @@ public class AIRacing : MonoBehaviour
             }
         }
     }
-    // Update is called once per frame
     void Update()
     {
         if (!crashed && gameObject.transform.position.y < .5f)
