@@ -3,7 +3,42 @@ guid: 8fdc6333653d45740ba598e52e5075a6
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bottom
+    second: {fileID: 2100000, guid: 105b2951d490e024b993eb24311e38f8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mouse
+    second: {fileID: 2100000, guid: 3fc825530062d9b4b9a7452dbac5df54, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Top_Sceen
+    second: {fileID: 2100000, guid: 0cd06fd593f866541a077db539bfdaef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Top_case
+    second: {fileID: 2100000, guid: a9236bce672856347927e9b534e495b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bottom_Keys
+    second: {fileID: 2100000, guid: cb6517e03fe72684bada27b1f6f5ca23, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: button_Pad
+    second: {fileID: 2100000, guid: ff3f13407a7c4b64da03091bfa7cab8f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wheel
+    second: {fileID: 2100000, guid: 496e000c6f857e146af13992b6be8255, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
