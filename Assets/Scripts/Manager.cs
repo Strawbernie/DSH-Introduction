@@ -10,7 +10,7 @@ public class Manager : MonoBehaviour
             if (!StatsManager.started)
             {
                 StatsManager.started = true;
-                StatsManager.spawnLocation = new Vector3(0, 0, 0);
+                StatsManager.spawnLocation = new Vector3(-27, 0.2f, 4.64f);
                 player.transform.position = new Vector3(StatsManager.spawnLocation.x, StatsManager.spawnLocation.y, StatsManager.spawnLocation.z);
             }
             player.transform.position = new Vector3(StatsManager.spawnLocation.x, StatsManager.spawnLocation.y, StatsManager.spawnLocation.z);
