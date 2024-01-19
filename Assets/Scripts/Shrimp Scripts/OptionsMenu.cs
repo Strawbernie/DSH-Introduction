@@ -38,17 +38,20 @@ public class OptionsMenu : MonoBehaviour
     }
     private void CheckControllerInput(InputDevice controller)
     {
-        if (inputData._rightController.TryGetFeatureValue(CommonUsages.primaryButton, out bool AButton))
+        if(controller != null)
         {
-            if (AButton)
+            if (inputData._rightController.TryGetFeatureValue(CommonUsages.primaryButton, out bool AButton))
             {
-                distance = Vector3.Distance(rightController.transform.position, leftController.transform.position);
-                Debug.Log("" + distance);
-                if (distance > 1.2f)
+                if (AButton)
                 {
-                    ScoreManager.armLength = distance;
-                    Experience.SetActive(true);
-                    CalcArms.SetActive(false);
+                    distance = Vector3.Distance(rightController.transform.position, leftController.transform.position);
+                    Debug.Log("" + distance);
+                    if (distance > 1.2f)
+                    {
+                        ScoreManager.armLength = distance;
+                        Experience.SetActive(true);
+                        CalcArms.SetActive(false);
+                    }
                 }
             }
         }
