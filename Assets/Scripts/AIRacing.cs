@@ -7,7 +7,7 @@ public class AIRacing : MonoBehaviour
 {
     public float movementSpeed;
     float initialVelocity = 0f;
-    float finalVelocity = .5f;
+    float finalVelocity = .25f;
     float currentVelocity = 0f;
     float accelerationRate = .02f;
     float decelerationRate = .2f;

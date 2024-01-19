@@ -5,21 +5,22 @@ using UnityEngine;
 using UnityEngine.XR;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.Windows;
 
 public class Racing : MonoBehaviour
 {
     private InputDevice RightController;
     private InputDevice LeftController;
     public InputData inputData;
-    float initialVelocity = 0f;
-    float finalVelocity = .2f;
-    float currentVelocity = 0f;
-    float accelerationRate = .02f;
-    float decelerationRate = .05f;
+     float maxSpeed = 420f; 
+     float acceleration = 140f; 
+     float deceleration = 24f; 
+   float brakeForce = 36f;
     bool checkpoint1 = false;
     bool checkpoint2 = false;
     bool checkpoint3 = false;
     bool checkpoint4 = false;
+    private Rigidbody rb;
     int lap = 0;
     bool crashed;
     bool accelerating;
@@ -32,6 +33,7 @@ public class Racing : MonoBehaviour
     void Start()
     {
         RightController = InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -39,13 +41,11 @@ public class Racing : MonoBehaviour
     {
         CheckControllerInput(RightController);
         CheckControllerInput(LeftController);
-        currentVelocity = Mathf.Clamp(currentVelocity, initialVelocity, finalVelocity);
         text.text = ("Lap"+(lap+1)+"/3");
         if (!crashed && gameObject.transform.position.y < -.5f||wantsReset)
         {
             wantsReset = false;
             crashed = true;
-            currentVelocity = 0f;
             gameObject.transform.position = new Vector3(previousTarget.transform.position.x, 1, previousTarget.transform.position.z);
             gameObject.transform.rotation = new Quaternion(0, yRot, 0,0);
             StartCoroutine(StopBraking());
@@ -129,24 +129,36 @@ public class Racing : MonoBehaviour
         {
             if (LeftButton)
             {
-                currentVelocity = currentVelocity + (accelerationRate * Time.deltaTime);
-                transform.Translate(0, 0, currentVelocity);
+                Accelerate();
             }
         }
-        if (inputData._rightController.TryGetFeatureValue(CommonUsages.triggerButton, out bool RightButton))
+        else if (inputData._rightController.TryGetFeatureValue(CommonUsages.triggerButton, out bool RightButton))
         {
             if (RightButton)
             {
-                currentVelocity = currentVelocity - (decelerationRate * Time.deltaTime);
-                if (currentVelocity > 0)
-                {
-                    transform.Translate(0, 0, currentVelocity);
-                }
-                else
-                {
-                    transform.Translate(0, 0, 0);
-                }
+                Brake();
             }
         }
+        else
+        {
+            ApplyNaturalDeceleration();
+        }
+    }
+    void Accelerate()
+    {
+        float speed = rb.velocity.magnitude;
+            rb.AddForce(transform.forward * acceleration);
+    }
+
+    void Brake()
+    {
+        // Apply braking force
+        rb.AddForce(-transform.forward * brakeForce);
+    }
+
+    void ApplyNaturalDeceleration()
+    {
+        // Apply a small deceleration force to simulate friction
+        rb.velocity *= 0.995f;
     }
 }
