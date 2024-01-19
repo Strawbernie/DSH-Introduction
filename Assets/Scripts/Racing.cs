@@ -12,9 +12,7 @@ public class Racing : MonoBehaviour
     private InputDevice RightController;
     private InputDevice LeftController;
     public InputData inputData;
-     float maxSpeed = 420f; 
      float acceleration = 140f; 
-     float deceleration = 24f; 
    float brakeForce = 36f;
     bool checkpoint1 = false;
     bool checkpoint2 = false;
@@ -30,6 +28,9 @@ public class Racing : MonoBehaviour
     float yRot;
     public bool lost;
     bool wantsReset;
+    private bool isSpeedBoosted = false;
+    float boostStartTime;
+    float boostDuration;
     void Start()
     {
         RightController = InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);
@@ -50,7 +51,25 @@ public class Racing : MonoBehaviour
             gameObject.transform.rotation = new Quaternion(0, yRot, 0,0);
             StartCoroutine(StopBraking());
         }
+        if (isSpeedBoosted)
+        {
+            if (Time.time - boostStartTime > boostDuration)
+            {
+                isSpeedBoosted = false;
+                acceleration = 140f;
+            }
         }
+    }
+    public void ApplySpeedBoost(float duration, float multiplier)
+    {
+        if (!isSpeedBoosted)
+        {
+            isSpeedBoosted = true;
+            boostDuration = duration;
+            boostStartTime = Time.time;
+            acceleration *= multiplier;
+        }
+    }
     IEnumerator StopBraking()
     {
         yield return new WaitForSeconds(1);
