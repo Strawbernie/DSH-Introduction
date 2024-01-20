@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class SpeedBoostPickup : MonoBehaviour
 {
-    public float boostDuration = 1f; // Adjust the duration of the speed boost
-    public float boostMultiplier = 1.01f; // Adjust the speed boost multiplier
+    public float boostDuration = 1f; 
+    public float boostMultiplier = 2f;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) // Assuming your player has the "Player" tag
+        if (other.CompareTag("Player")) 
         {
             ApplySpeedBoost(other.gameObject);
+            Debug.Log("applied");
         }
     }
 

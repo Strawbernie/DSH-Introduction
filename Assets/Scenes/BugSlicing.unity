@@ -2832,7 +2832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SliceableCubePrefab: {fileID: 654055039778768354, guid: a0a9e0977c3e8384bab17579b1cc98ae, type: 3}
   UpDownPrefab: {fileID: 3799721912516574945, guid: e1000fe0871cfd249ac338d46158b21a, type: 3}
-  HealPrefab: {fileID: 8089346576356574768, guid: 1f85450b8998f184991c56eaa59e8492, type: 3}
+  HealPrefab: {fileID: 269896287501120707, guid: 894df58fbd5f88949bbed585873f3851, type: 3}
   HP: 10
   text: {fileID: 415446220}
   countdownText: {fileID: 2009301866}

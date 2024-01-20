@@ -19,18 +19,17 @@ public class SpawnManager : MonoBehaviour
     float zPosMaximum;
     public TextMeshProUGUI countdownText;
     public float totalTime = 120f;
+    bool sliceSucces;
     private void Start()
     {
         ScoreManager.Sliced = 0;
-        ScoreManager.Missed= 0;
+        ScoreManager.Missed = 0;
         maxRange = 13;
         zPosMinimum = ScoreManager.armLength * 1.5f;
         zPosMaximum = ScoreManager.armLength * -3.5f;
         spawnManager = FindObjectOfType<SpawnManager>();
         text.text = ("HP:" + spawnManager.HP);
         StartCoroutine(StartDelay());
-        UpdateTimerDisplay();
-        InvokeRepeating("UpdateTimer", 1f, 1f);
     }
     void UpdateTimer()
     {
@@ -43,7 +42,7 @@ public class SpawnManager : MonoBehaviour
         if (totalTime <= 0f)
         {
             SceneManager.LoadScene("BugSlicingEndScreen");
-        CancelInvoke("UpdateTimer");
+            CancelInvoke("UpdateTimer");
         }
     }
 
@@ -57,8 +56,39 @@ public class SpawnManager : MonoBehaviour
     }
     IEnumerator StartDelay()
     {
+        float yPos = (Random.Range(.75f, 1.5f));
+        float zPos = (Random.Range(zPosMinimum, zPosMaximum));
         yield return new WaitForSeconds(5);
-        yield return StartCoroutine(SpawnLeft());
+        StartCoroutine(Tutorial());
+    }
+    IEnumerator Tutorial()
+    {
+        float yPos = (Random.Range(.75f, 1.5f));
+        float zPos = (Random.Range(zPosMinimum, zPosMaximum));
+        Instantiate(SliceableCubePrefab, new Vector3(4, yPos, zPos), Quaternion.Euler(-90f, -90f, 0f));
+        yield return new WaitForSeconds(4);
+        if (HP == 10||sliceSucces)
+        {
+            Instantiate(HealPrefab, new Vector3(4, yPos, zPos), Quaternion.Euler(0f, -90f, -90f));
+            sliceSucces = true;
+            yield return new WaitForSeconds(4);
+            if (HP == 11)
+            {
+                StartCoroutine(SpawnLeft());
+                UpdateTimerDisplay();
+                InvokeRepeating("UpdateTimer", 1f, 1f);
+            }
+            else
+            {
+                HP = 10;
+                StartCoroutine(Tutorial());
+            }
+        }
+        else
+        {
+            HP = 10;
+            StartCoroutine(Tutorial());
+        }
     }
     IEnumerator SpawnLeft()
     {
@@ -75,7 +105,7 @@ public class SpawnManager : MonoBehaviour
         }
         else if(prefabID < 13)
         {
-            Instantiate(HealPrefab, new Vector3(4, yPos, zPos), Quaternion.identity);
+            Instantiate(HealPrefab, new Vector3(4, yPos, zPos), Quaternion.Euler(0f, -90f, -90f));
         }
         else if (prefabID < 14)
         {
