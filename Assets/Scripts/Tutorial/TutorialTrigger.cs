@@ -4,15 +4,33 @@ using UnityEngine;
 
 public class TutorialTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private TutorialTrigger[] triggersToEnable;
+
+    public TutorialManager tutorialManager;
+    public PopUpSequence mySequence;
+    public bool active = false;
+
+    public virtual void Start()
     {
-        
+        tutorialManager = FindObjectOfType<TutorialManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Trigger()
     {
-        
+        if (active)
+        {
+            tutorialManager.StartSequence(mySequence);
+            EnableTriggers();
+            active = false;
+        }
+    }
+
+    public virtual void EnableTriggers()
+    {
+        foreach (TutorialTrigger trigger in triggersToEnable)
+        {
+            trigger.active = true;
+        }
     }
 }

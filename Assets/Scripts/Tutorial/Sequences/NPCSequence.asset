@@ -10,8 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 193106feac7443347a73eee5f47c2d52, type: 3}
-  m_Name: StartSequence
+  m_Name: NPCSequence
   m_EditorClassIdentifier: 
   screens:
-  - {fileID: 2339895627436534821, guid: 4b52bac5b6b45fb44aa7b861ba1bcb19, type: 3}
-  - {fileID: 7708000491805209, guid: 53356cde2b515f24fb637b9b76a3cdfa, type: 3}
+  - {fileID: 2339895627436534821, guid: b0a1810f26c5b0844baa93a19e1ca21c, type: 3}

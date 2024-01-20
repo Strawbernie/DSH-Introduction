@@ -17,7 +17,7 @@ public class TutorialManager : MonoBehaviour
         StartSequence(startSequence);
     }
 
-    private void StartSequence(PopUpSequence sequence)
+    public void StartSequence(PopUpSequence sequence)
     {
         screenSequence = new Queue<GameObject>();
         foreach (GameObject screen in sequence.screens)
