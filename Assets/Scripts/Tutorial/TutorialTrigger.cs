@@ -8,7 +8,7 @@ public class TutorialTrigger : MonoBehaviour
     private TutorialTrigger[] triggersToEnable;
 
     public TutorialManager tutorialManager;
-    public PopUpSequence mySequence;
+    public TutorialScreen tutorialScreen;
     public bool active = false;
 
     public virtual void Start()
@@ -20,7 +20,7 @@ public class TutorialTrigger : MonoBehaviour
     {
         if (active)
         {
-            tutorialManager.StartSequence(mySequence);
+            tutorialManager.StartSequence(tutorialScreen);
             EnableTriggers();
             active = false;
         }

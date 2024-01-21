@@ -10,11 +10,10 @@ public class PopUpManager : MonoBehaviour
     private TutorialManager tutorialManager;
     public GameObject DisplayPopUp(GameObject prefab)
     {
-        
+
         GameObject popUp = Instantiate(prefab, new Vector3(prefab.transform.position.x, prefab.transform.position.y, 0), Quaternion.identity);
         popUp.transform.SetParent(popUpCanvas, false);
-        popUp.GetComponentInChildren<Button>()?.onClick.AddListener(tutorialManager.NextScreen);
-
+        popUp.GetComponent<PopUpSetUp>().SetUp(tutorialManager);
 
         return popUp;
     }
