@@ -12,7 +12,6 @@ public class SpeedBoostPickup : MonoBehaviour
         if (other.CompareTag("Player")) 
         {
             ApplySpeedBoost(other.gameObject);
-            Debug.Log("applied");
         }
     }
 
