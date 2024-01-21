@@ -31,32 +31,56 @@ public class Racing : MonoBehaviour
     private bool isSpeedBoosted = false;
     float boostStartTime;
     float boostDuration;
+    public TextMeshProUGUI countdownText;
+    public float totalTime = 5f;
+    public bool started;
     void Start()
     {
         RightController = InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);
         rb = GetComponent<Rigidbody>();
+        UpdateTimerDisplay();
+        InvokeRepeating("UpdateTimer", 1f, 1f);
+    }
+    void UpdateTimer()
+    {
+        totalTime -= 1f;
+        UpdateTimerDisplay();
+
+        if (totalTime <= 0f)
+        {
+            started = true;
+            countdownText.gameObject.SetActive(false);
+            CancelInvoke("UpdateTimer");
+        }
     }
 
-    // Update is called once per frame
+    void UpdateTimerDisplay()
+    {
+        countdownText.text = "" + totalTime;
+    }
+
     void Update()
     {
-        CheckControllerInput(RightController);
-        CheckControllerInput(LeftController);
-        text.text = ("Lap"+(lap+1)+"/3");
-        if (!crashed && gameObject.transform.position.y < -.5f||wantsReset)
+        if (started)
         {
-            wantsReset = false;
-            crashed = true;
-            gameObject.transform.position = new Vector3(previousTarget.transform.position.x, 1, previousTarget.transform.position.z);
-            gameObject.transform.rotation = new Quaternion(0, yRot, 0,0);
-            StartCoroutine(StopBraking());
-        }
-        if (isSpeedBoosted)
-        {
-            if (Time.time - boostStartTime > boostDuration)
+            CheckControllerInput(RightController);
+            CheckControllerInput(LeftController);
+            text.text = ("Lap" + (lap + 1) + "/3");
+            if (!crashed && gameObject.transform.position.y < -.5f || wantsReset)
             {
-                isSpeedBoosted = false;
-                acceleration = 140f;
+                wantsReset = false;
+                crashed = true;
+                gameObject.transform.position = new Vector3(previousTarget.transform.position.x, 1, previousTarget.transform.position.z);
+                gameObject.transform.rotation = new Quaternion(0, yRot, 0, 0);
+                StartCoroutine(StopBraking());
+            }
+            if (isSpeedBoosted)
+            {
+                if (Time.time - boostStartTime > boostDuration)
+                {
+                    isSpeedBoosted = false;
+                    acceleration = 140f;
+                }
             }
         }
     }

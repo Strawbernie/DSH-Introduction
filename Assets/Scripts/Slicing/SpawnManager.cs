@@ -18,6 +18,8 @@ public class SpawnManager : MonoBehaviour
     float zPosMinimum;
     float zPosMaximum;
     public TextMeshProUGUI countdownText;
+    public GameObject Tutorial1;
+    public GameObject Tutorial2;
     public float totalTime = 120f;
     bool sliceSucces;
     private void Start()
@@ -65,16 +67,20 @@ public class SpawnManager : MonoBehaviour
     {
         float yPos = (Random.Range(.75f, 1.5f));
         float zPos = (Random.Range(zPosMinimum, zPosMaximum));
+        Tutorial1.SetActive(true);
         Instantiate(SliceableCubePrefab, new Vector3(4, yPos, zPos), Quaternion.Euler(-90f, -90f, 0f));
         yield return new WaitForSeconds(4);
         if (HP == 10||sliceSucces)
         {
             Instantiate(HealPrefab, new Vector3(4, yPos, zPos), Quaternion.Euler(0f, -90f, -90f));
+            Tutorial1.SetActive(false);
+            Tutorial2.SetActive(true);
             sliceSucces = true;
             yield return new WaitForSeconds(4);
             if (HP == 11)
             {
                 StartCoroutine(SpawnLeft());
+                Tutorial2.SetActive(false);
                 UpdateTimerDisplay();
                 InvokeRepeating("UpdateTimer", 1f, 1f);
             }

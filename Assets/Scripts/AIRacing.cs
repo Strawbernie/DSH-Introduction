@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using TMPro;
+using Unity.XR.CoreUtils;
 
 public class AIRacing : MonoBehaviour
 {
@@ -27,10 +29,13 @@ public class AIRacing : MonoBehaviour
     float yRot;
     int lap = 0;
     Racing player;
+
     private void Start()
     {
         player = FindObjectOfType<Racing>();
     }
+   
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == "Checkpoint")
@@ -80,46 +85,50 @@ public class AIRacing : MonoBehaviour
     }
     void Update()
     {
-        if (!crashed && gameObject.transform.position.y < .5f)
+        if (player.started)
         {
-            crashed = true;
-            braking = true;
-            currentVelocity= 0f;
-            brakeTime = 1;
-            gameObject.transform.position = new Vector3(previousTarget.transform.position.x, 1, previousTarget.transform.position.z);
-            gameObject.transform.rotation = new Quaternion(0, yRot, 0, 0);
-            StartCoroutine(StopBraking());
-        }
-        if (currentTarget >= maxCheckPoints)
-        {
-            currentTarget = 0;
-        }
-        if (target != null)
-        {
-            Vector3 direction = (target.transform.position - transform.position).normalized;
-            currentVelocity = Mathf.Clamp(currentVelocity, initialVelocity, finalVelocity);
-        }
-        target = checkPoints[currentTarget];
-        Vector3 dir = target.transform.position - transform.position;
-        dir.y = 0;
-        Quaternion rot = Quaternion.LookRotation(dir);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rot, rotationSpeed * Time.deltaTime);
-        if (braking)
-        {
-            currentVelocity = currentVelocity - (decelerationRate * Time.deltaTime);
-            if (currentVelocity > 0)
+            if (!crashed && gameObject.transform.position.y < .5f)
             {
-                transform.Translate(0, 0, currentVelocity);
+                crashed = true;
+                braking = true;
+                currentVelocity = 0f;
+                brakeTime = 1;
+                gameObject.transform.position = new Vector3(previousTarget.transform.position.x, 1, previousTarget.transform.position.z);
+                gameObject.transform.rotation = new Quaternion(0, yRot, 0, 0);
+                StartCoroutine(StopBraking());
+            }
+            if (currentTarget >= maxCheckPoints)
+            {
+                currentTarget = 0;
+            }
+            if (target != null)
+            {
+                Vector3 direction = (target.transform.position - transform.position).normalized;
+                currentVelocity = Mathf.Clamp(currentVelocity, initialVelocity, finalVelocity);
+            }
+            target = checkPoints[currentTarget];
+            Vector3 dir = target.transform.position - transform.position;
+            dir.y = 0;
+            Quaternion rot = Quaternion.LookRotation(dir);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rot, rotationSpeed * Time.deltaTime);
+            if (braking)
+            {
+                currentVelocity = currentVelocity - (decelerationRate * Time.deltaTime);
+                if (currentVelocity > 0)
+                {
+                    transform.Translate(0, 0, currentVelocity);
+                }
+                else
+                {
+                    transform.Translate(0, 0, 0);
+                }
             }
             else
             {
-                transform.Translate(0, 0, 0);
+                Accelerate();
             }
         }
-        else
-        {
-            Accelerate();
-        }
+       
     }
     public void Accelerate()
     {
