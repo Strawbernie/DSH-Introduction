@@ -7177,6 +7177,7 @@ MonoBehaviour:
       Ready?\r"
     - "Let\u2019s go!\r\r"
   buttonCanvas: {fileID: 2078850122}
+  dialogueManager: {fileID: 0}
 --- !u!1001 &394144045
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11976,6 +11977,7 @@ MonoBehaviour:
       short period of time. Are you ready to make the best post ever?\r"
     - "Great! Let\u2019s begin!\r\r"
   buttonCanvas: {fileID: 1513046115}
+  dialogueManager: {fileID: 1131050575}
 --- !u!1001 &655956671
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21507,6 +21509,7 @@ MonoBehaviour:
   dialogueTrigger: {fileID: 1990169494}
   audioManager: {fileID: 701220187}
   clipName: CatVoice
+  dialogueHasEnded: 0
 --- !u!4 &1131050576
 Transform:
   m_ObjectHideFlags: 0
@@ -21691,6 +21694,7 @@ MonoBehaviour:
       for those 3 topics. Sounds good? '
     - "Let's start!\r"
   buttonCanvas: {fileID: 1054165504}
+  dialogueManager: {fileID: 0}
 --- !u!135 &1140848023
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -28711,6 +28715,7 @@ MonoBehaviour:
       Ready?\r"
     - "Let\u2019s go!\r\r"
   buttonCanvas: {fileID: 2078850122}
+  dialogueManager: {fileID: 1131050575}
 --- !u!1 &1506474089
 GameObject:
   m_ObjectHideFlags: 0
@@ -31428,6 +31433,7 @@ MonoBehaviour:
       short period of time. Are you ready to make the best post ever?\r"
     - "Great! Let\u2019s begin!\r\r"
   buttonCanvas: {fileID: 1513046115}
+  dialogueManager: {fileID: 0}
 --- !u!1001 &1605164651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38805,6 +38811,7 @@ MonoBehaviour:
       for those 3 topics. Sounds good? '
     - "Let's start!\r"
   buttonCanvas: {fileID: 1054165504}
+  dialogueManager: {fileID: 1131050575}
 --- !u!1001 &1990888865
 PrefabInstance:
   m_ObjectHideFlags: 0

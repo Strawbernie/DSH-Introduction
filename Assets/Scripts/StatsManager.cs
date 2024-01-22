@@ -5,6 +5,7 @@ using UnityEngine;
 public static class StatsManager
 {
     public static bool started = false;
+    public static bool startedTutorial = false;
     public static Vector3 spawnLocation;
     public static Quaternion Rotation;
 }

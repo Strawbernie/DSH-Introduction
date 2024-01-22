@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 1ace3b65c517a064b836a75afe9ecac2, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -692,8 +692,7 @@ MonoBehaviour:
       while pointing at the Continue button to go to the next screen.
     - Our game will show you what it is like to be an intern at the Digital society
       Hub and you can walk around the DSH building as well.
-    - You can walk around using the LEFT joiystick! Why don't you try it out for
-      yourself?
+    - You can walk around using the LEFT joystick! Why don't you try it out for yourself?
   active: 1
   nextSceneCanvas: {fileID: 4015128327512864946}
 --- !u!1 &336311187
@@ -1409,7 +1408,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 725065243}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.94}
+  m_LocalPosition: {x: 0, y: 0, z: 1.299}
   m_LocalScale: {x: 0.0009999998, y: 0.001, z: 0.0009999998}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1538,15 +1537,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1527496789285990862, guid: 17afe1f707f0b7742af2db473a10b609, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -62.38445
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1527496789285990862, guid: 17afe1f707f0b7742af2db473a10b609, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1527496789285990862, guid: 17afe1f707f0b7742af2db473a10b609, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.28
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1527496789285990862, guid: 17afe1f707f0b7742af2db473a10b609, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1595,6 +1594,14 @@ PrefabInstance:
     - target: {fileID: 6937374179269313100, guid: 17afe1f707f0b7742af2db473a10b609, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7635436706835438636, guid: 17afe1f707f0b7742af2db473a10b609, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7635436706835438636, guid: 17afe1f707f0b7742af2db473a10b609, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -13.85
       objectReference: {fileID: 0}
     - target: {fileID: 7657976053028794978, guid: 17afe1f707f0b7742af2db473a10b609, type: 3}
       propertyPath: m_IsActive
@@ -2229,7 +2236,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228544773}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.049}
+  m_LocalPosition: {x: 0, y: 0, z: 0.3}
   m_LocalScale: {x: 0.00009999997, y: 0.00009999999, z: 0.00009999997}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2238,7 +2245,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0, y: -0.11}
+  m_AnchoredPosition: {x: 0, y: -0.11}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1228544775

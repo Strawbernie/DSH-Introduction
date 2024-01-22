@@ -1546,6 +1546,10 @@ PrefabInstance:
       propertyPath: sliceButton
       value: 
       objectReference: {fileID: 1933997114}
+    - target: {fileID: 1366371638229225597, guid: b8da75106ba67f542b0055c7ab7dd4da, type: 3}
+      propertyPath: startButtonSceneName
+      value: TutorialScene
+      objectReference: {fileID: 0}
     - target: {fileID: 1460971056542608230, guid: b8da75106ba67f542b0055c7ab7dd4da, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

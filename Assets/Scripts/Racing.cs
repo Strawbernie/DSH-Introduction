@@ -34,10 +34,16 @@ public class Racing : MonoBehaviour
     public TextMeshProUGUI countdownText;
     public float totalTime = 5f;
     public bool started;
+    public GameObject explanation;
     void Start()
     {
         RightController = InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);
         rb = GetComponent<Rigidbody>();
+    }
+    public void StartRace()
+    {
+        explanation.SetActive(false);
+        countdownText.gameObject.SetActive(true);
         UpdateTimerDisplay();
         InvokeRepeating("UpdateTimer", 1f, 1f);
     }

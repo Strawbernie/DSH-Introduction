@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CardBattling.unity
     guid: 1a418379174961e41bbf031552669c5f
+  - enabled: 1
+    path: Assets/Scenes/TutorialScene.unity
+    guid: f2882dd7dc2f63d429248e48dae86321
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 9c2ad421e111c844d9a738afde0f2d10, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: ac9dc035487b6cc49937f4b2ffd35ba2, type: 2}
