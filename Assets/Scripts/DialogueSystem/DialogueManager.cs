@@ -16,6 +16,9 @@ public class DialogueManager : MonoBehaviour
     public AudioManager audioManager;
     public string clipName;
 
+    [SerializeField]
+    private NPCTrigger npcTrigger;
+
     private void Awake()
     {
         dialogueCanvas.gameObject.SetActive(false);
@@ -27,6 +30,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        Debug.Log("Started Dialogue");
         dialogueCanvas.gameObject.SetActive(true);
         dialogueTrigger.buttonCanvas.gameObject.SetActive(false);
 
@@ -58,5 +62,6 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueCanvas.gameObject.SetActive(false);
         dialogueTrigger.buttonCanvas.gameObject.SetActive(false);
+        npcTrigger.dialogueHasEnded = true;
     }
 }
