@@ -16,6 +16,8 @@ public class DialogueManager : MonoBehaviour
     public AudioManager audioManager;
     public string clipName;
 
+    public bool dialogueHasEnded = false;
+
     private void Awake()
     {
         dialogueCanvas.gameObject.SetActive(false);
@@ -27,6 +29,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        Debug.Log("Started Dialogue");
         dialogueCanvas.gameObject.SetActive(true);
         dialogueTrigger.buttonCanvas.gameObject.SetActive(false);
 
@@ -58,5 +61,6 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueCanvas.gameObject.SetActive(false);
         dialogueTrigger.buttonCanvas.gameObject.SetActive(false);
+        dialogueHasEnded = true;
     }
 }
