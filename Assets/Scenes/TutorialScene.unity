@@ -837,18 +837,16 @@ MonoBehaviour:
   tutorialScreen:
     tutorialScreens:
     - Well done! If that was too nauseating you can also teleport using the RIGHT
-      joystick
-    - you can always change your settings in the menu by pressing the LEFT menu button.
+      joystick and you can always change your settings in the menu by pressing the
+      LEFT menu button.
     - Now that you know how to get around! Let me show you how to start any of the
       mini games in the game
     - There are three mini games. Each of them represents an internship that the
-      DSH has to offer.
-    - There  will be 1 mini game that represenents the internship for ICT students,
-      1 for Business students and 1 for Communications students.
-    - On the ground floor of the DSH building, there will be three NPC's. These NPC's
-      will lead you to their respective mini game
-    - 'Press the button that appears above their head once you get close to talk
-      to the NPC''s. '
+      DSH has to offer. There will be 1 mini game that represenents the internship
+      for ICT students, 1 for Business students and 1 for Communications students.
+    - 'On the ground floor of the DSH building, there will be three NPC''s. These
+      NPC''s will lead you to their respective mini game. Press the button that appears
+      above their head once you get close to talk to the NPC''s. '
   active: 0
   myCollider: {fileID: 0}
   collisionTriggerer: {fileID: 1536861011}
@@ -2690,8 +2688,7 @@ MonoBehaviour:
     - You can go there by pressing the button on the wall to your left!
     - Good luck and have fun!
   active: 0
-  dialogueManager: {fileID: 0}
-  dialogueHasEnded: 0
+  dialogueManager: {fileID: 1495951617}
   waitTime: 2
   nextSceneCanvas: {fileID: 4015128327512864946}
 --- !u!114 &1399940930 stripped
@@ -3253,7 +3250,7 @@ MonoBehaviour:
   dialogueTrigger: {fileID: 2003669820}
   audioManager: {fileID: 1159721992}
   clipName: CatVoice
-  npcTrigger: {fileID: 1378483484}
+  dialogueHasEnded: 0
 --- !u!4 &1495951618
 Transform:
   m_ObjectHideFlags: 0
@@ -4477,6 +4474,7 @@ MonoBehaviour:
     - Hi im an NPC
     - i am an intern at dsh as well. I am here to show you show to do dialogue!
   buttonCanvas: {fileID: 1142922349}
+  dialogueManager: {fileID: 1495951617}
 --- !u!114 &14402870139563552
 MonoBehaviour:
   m_ObjectHideFlags: 0
