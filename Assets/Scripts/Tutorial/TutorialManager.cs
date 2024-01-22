@@ -47,6 +47,8 @@ public class TutorialManager : MonoBehaviour
     {
         popUpCanvas.gameObject.SetActive(false);
     }
+
+
     /*[SerializeField]
     private PopUpManager popUpManager;
     [SerializeField]

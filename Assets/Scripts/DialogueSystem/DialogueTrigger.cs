@@ -6,13 +6,15 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
     public Canvas buttonCanvas;
+    [SerializeField]
+    private DialogueManager dialogueManager;
     private void Awake()
     {
-        buttonCanvas.gameObject.SetActive(false);// made it so it can be tested without VR 
+        buttonCanvas.gameObject.SetActive(false);
     }
     public void TriggerDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        dialogueManager.StartDialogue(dialogue);
     }
     void OnTriggerEnter(Collider collider)
     {

@@ -1,18 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class NPCTrigger : TutorialTrigger
+public class ControlsTrigger : TutorialTrigger
 {
 
     [SerializeField]
-    private DialogueManager dialogueManager;
- 
+    private float waitTime = 10f;
     [SerializeField]
-    private float waitTime = 2f;
-    [SerializeField]
-    private Canvas nextSceneCanvas;
+    private Canvas tutorialCanvas;
+
 
     public override void Start()
     {
@@ -22,18 +19,19 @@ public class NPCTrigger : TutorialTrigger
     {
         if (active)
         {
-            if (dialogueManager.dialogueHasEnded == true)
+            if (tutorialCanvas.gameObject == active)
             {
-                nextSceneCanvas.gameObject.SetActive(true);
+                Debug.Log("Starting Coroutine!");
                 StartCoroutine("DelayTrigger");
             }
+
         }
     }
 
     IEnumerator DelayTrigger()
     {
         yield return new WaitForSeconds(waitTime);
-        Debug.Log("Waited for" + waitTime +  "sec then triggered");
+        Debug.Log("Waited for" + waitTime + "sec then triggered");
         Trigger();
     }
 }

@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class StartTutorialTrigger : TutorialTrigger
 {
     [SerializeField]
-    private Button nextSceneButton;
+    private Canvas nextSceneCanvas;
     public override void Start()
     {
         base.Start();
-        nextSceneButton.gameObject.SetActive(false);
+        nextSceneCanvas.gameObject.SetActive(false);
         Trigger();
     }
 }

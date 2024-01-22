@@ -16,8 +16,7 @@ public class DialogueManager : MonoBehaviour
     public AudioManager audioManager;
     public string clipName;
 
-    [SerializeField]
-    private NPCTrigger npcTrigger;
+    public bool dialogueHasEnded = false;
 
     private void Awake()
     {
@@ -62,6 +61,6 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueCanvas.gameObject.SetActive(false);
         dialogueTrigger.buttonCanvas.gameObject.SetActive(false);
-        npcTrigger.dialogueHasEnded = true;
+        dialogueHasEnded = true;
     }
 }
