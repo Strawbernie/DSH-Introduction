@@ -8,6 +8,7 @@ public class DialogueTrigger : MonoBehaviour
     public Canvas buttonCanvas;
     [SerializeField]
     private DialogueManager dialogueManager;
+    public Animator animator;
     private void Awake()
     {
         buttonCanvas.gameObject.SetActive(false);
