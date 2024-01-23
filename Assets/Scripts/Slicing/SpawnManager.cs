@@ -72,7 +72,7 @@ public class SpawnManager : MonoBehaviour
         yield return new WaitForSeconds(4);
         if (HP == 10||sliceSucces)
         {
-            Instantiate(HealPrefab, new Vector3(4, yPos, zPos), Quaternion.Euler(0f, -90f, -90f));
+            Instantiate(HealPrefab, new Vector3(4, yPos, zPos), Quaternion.Euler(45f, 0f, 0f));
             Tutorial1.SetActive(false);
             Tutorial2.SetActive(true);
             sliceSucces = true;
@@ -111,7 +111,7 @@ public class SpawnManager : MonoBehaviour
         }
         else if(prefabID < 13)
         {
-            Instantiate(HealPrefab, new Vector3(4, yPos, zPos), Quaternion.Euler(0f, -90f, -90f));
+            Instantiate(HealPrefab, new Vector3(4, yPos, zPos), Quaternion.Euler(45f, 0f, 0f));
         }
         else if (prefabID < 14)
         {

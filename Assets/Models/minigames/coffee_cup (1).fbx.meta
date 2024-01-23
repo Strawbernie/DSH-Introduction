@@ -1,24 +1,9 @@
 fileFormatVersion: 2
-guid: 4b9a777e677ece540aca0cce70f04826
+guid: a6f2617b61ef1f84ca7c7f37da959c0f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: coffee
-    second: {fileID: -683197729223098381, guid: a6f2617b61ef1f84ca7c7f37da959c0f, type: 3}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: cup
-    second: {fileID: 1544678405756055709, guid: a6f2617b61ef1f84ca7c7f37da959c0f, type: 3}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: paper
-    second: {fileID: -8502847539763084173, guid: a6f2617b61ef1f84ca7c7f37da959c0f, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

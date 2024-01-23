@@ -681,6 +681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputData: {fileID: 981568515}
   Menu: {fileID: 0}
+  controlMenu: {fileID: 0}
 --- !u!4 &981568517
 Transform:
   m_ObjectHideFlags: 0

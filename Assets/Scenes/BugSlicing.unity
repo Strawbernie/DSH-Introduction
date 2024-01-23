@@ -182,6 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputData: {fileID: 66627728}
   Menu: {fileID: 456923744}
+  controlMenu: {fileID: 0}
 --- !u!1001 &75470503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1459,7 +1460,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Don't slice the checkmarks!
+  m_text: Don't slice the pill!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2484,7 +2485,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Slice the bots!
+  m_text: Slice the virus!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3605,6 +3606,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputData: {fileID: 66627728}
   Menu: {fileID: 456923744}
+  controlMenu: {fileID: 0}
 --- !u!114 &1807527282 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7377754908321592301, guid: 17afe1f707f0b7742af2db473a10b609, type: 3}
