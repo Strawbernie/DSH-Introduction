@@ -7094,10 +7094,9 @@ MonoBehaviour:
     - Hey! You must be here to help with the issue I reported.
     - "Oh, you\u2019re looking for an internship. Okay, this is the ICT internship.
       Let\u2019s see if this is a right fit for you."
-    - "Let\u2019s start you off with trying to help us filter through the annoying
-      social media bots. \r\nWhat you need to do is slice off the swarm of bots to
-      protect our integrity. But make sure you don\u2019t slice the verified users.
-      Ready?\r"
+    - "Let\u2019s start you off with trying to help us defeat those pesky viruses.
+      \r\nWhat you need to do is SLICE off the swarm of VIRUSES to protect our integrity.
+      But make sure you DON'T SLICE the PILLS that HEAL you. Ready?\r"
     - "Let\u2019s go!\r\r"
   buttonCanvas: {fileID: 2078850122}
   dialogueManager: {fileID: 1131050575}
@@ -13194,7 +13193,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 059d1770c27e14541946f33772e5ba90, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.049
+      value: -8.835
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 059d1770c27e14541946f33772e5ba90, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13202,7 +13201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 059d1770c27e14541946f33772e5ba90, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.01
+      value: 4.188
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 059d1770c27e14541946f33772e5ba90, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17720,7 +17719,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7df3533e818474a4eb8a9c233aad4d9b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.845
+      value: 0.138
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7df3533e818474a4eb8a9c233aad4d9b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -17728,7 +17727,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7df3533e818474a4eb8a9c233aad4d9b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.184
+      value: 3.283
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7df3533e818474a4eb8a9c233aad4d9b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -21793,8 +21792,8 @@ MonoBehaviour:
       see if working in business is what you\u2019re looking for."
     - "Let me show you what I do and you can see if this is the right choice for
       you. We\u2019re going to have a quick business meeting and discuss ways to
-      improve efficiency, profit and exposure. "
-    - 'All you need to do is use your playing cards to come up with appropriate solutions
+      improve EFFICIENCY, PROFIT and EXPOSURE. "
+    - 'All you need to do is use your playing CARDS to come up with APPROPRIATE SOLUTIONS
       for those 3 topics. Sounds good? '
     - "Let's start!\r"
   buttonCanvas: {fileID: 1054165504}
@@ -31407,8 +31406,8 @@ MonoBehaviour:
       media posts and right now we are looking to get as much engagement for our
       posts as possible. Let\u2019s see if this is also what you\u2019re looking
       for."
-    - "You will be racing with competitors to try and get your post to #1. If you
-      need an extra boost you can try to reach for the coffee to gain speed for a
+    - "You will be RACING with competitors to try and get your post to #1. If you
+      need an extra BOOST you can try to reach for the COFFEE to gain SPEED for a
       short period of time. Are you ready to make the best post ever?\r"
     - "Great! Let\u2019s begin!\r\r"
   buttonCanvas: {fileID: 1513046115}
