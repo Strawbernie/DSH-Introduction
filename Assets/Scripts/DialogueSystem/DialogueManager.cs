@@ -29,7 +29,10 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        dialogueTrigger.animator.SetBool("Talking", true);
+        if(dialogueTrigger.animator!= null)
+        {
+            dialogueTrigger.animator.SetBool("Talking", true);
+        }
         Debug.Log("Started Dialogue");
         dialogueCanvas.gameObject.SetActive(true);
         dialogueTrigger.buttonCanvas.gameObject.SetActive(false);
@@ -50,7 +53,10 @@ public class DialogueManager : MonoBehaviour
     {
         if (dialogueSentences.Count == 0)
         {
-            dialogueTrigger.animator.SetBool("Talking", false);
+            if (dialogueTrigger.animator != null)
+            {
+                dialogueTrigger.animator.SetBool("Talking", false);
+            }
             EndDialogue();
             return;
         }
