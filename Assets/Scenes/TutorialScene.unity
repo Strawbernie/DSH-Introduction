@@ -4482,6 +4482,7 @@ MonoBehaviour:
     - i am an intern at dsh as well. I am here to show you show to do dialogue!
   buttonCanvas: {fileID: 1142922349}
   dialogueManager: {fileID: 1495951617}
+  animator: {fileID: 0}
 --- !u!114 &14402870139563552
 MonoBehaviour:
   m_ObjectHideFlags: 0

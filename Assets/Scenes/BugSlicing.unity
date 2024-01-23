@@ -3104,9 +3104,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a2ea5fccac48a418d14ca82eef0e46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SliceableCubePrefab: {fileID: 654055039778768354, guid: a0a9e0977c3e8384bab17579b1cc98ae, type: 3}
-  UpDownPrefab: {fileID: 3799721912516574945, guid: e1000fe0871cfd249ac338d46158b21a, type: 3}
-  HealPrefab: {fileID: 269896287501120707, guid: 894df58fbd5f88949bbed585873f3851, type: 3}
+  SliceableCubePrefab: {fileID: 1751555710122989122, guid: af4aef785f31f664f9ba80c85fc8a807, type: 3}
+  UpDownPrefab: {fileID: 3858487394516935222, guid: e41cb40d6264f46488ef50821787f4aa, type: 3}
+  HealPrefab: {fileID: 930933140721344675, guid: 3bd2576d62fc3b447bb3328c88c5a469, type: 3}
   HP: 10
   text: {fileID: 415446220}
   countdownText: {fileID: 2009301866}
