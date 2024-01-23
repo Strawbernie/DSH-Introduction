@@ -846,6 +846,7 @@ MonoBehaviour:
     - 'On the ground floor of the DSH building, there will be three NPC''s. These
       NPC''s will lead you to their respective mini game. Press the button that appears
       above their head once you get close to talk to the NPC''s. '
+    - '!! If you ever forget any controls, press "B" to go to the CONTROLSPAGE !!'
   active: 0
   myCollider: {fileID: 0}
   collisionTriggerer: {fileID: 1536861011}
@@ -2692,8 +2693,8 @@ MonoBehaviour:
     tutorialScreens:
     - "Now that you know how the game works and what you need to do, \nI can send
       you to the DSH building!"
-    - You can go there by pressing the button on the wall to your left!
-    - Good luck and have fun!
+    - You can go there by pressing the button on the wall to your left! Good luck
+      and have fun!
   active: 0
   dialogueManager: {fileID: 1495951617}
   waitTime: 2
